@@ -1,0 +1,112 @@
+{% load widget_tweaks %}
+{% load i18n %}
+
+
+{% trans "Insert your name" as insert_your_name %}
+{% trans "Insert your email" as insert_your_email %}
+{% trans "Insert your password" as insert_pass %}
+{% trans "Confirm your password" as confirm_pass %}
+
+
+<div class="modal fade login_modal_enter bd-example-modal-sm" tabindex="-1" role="dialog"
+     aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+  		 <div class="login_modal_content">
+  		    <div class="login_modal_head">
+  	        	<div class="login_title">
+  	    	    	<h3>{% trans 'Log In' %}</h3>
+                
+                
+                <i class="fa fa-close" id="modal-close" aria-hidden="true"></i> 
+  	        	</div>
+  		    </div>
+  		    <div class="login_modal_body">
+  		        <div class="login">    
+  		        	<form class="formulario" method="post" action="{% url 'login_big' %}?next={% firstof request.path '/' %}">
+                  {% csrf_token %}
+                  
+  		        		<div class="input_wrap">
+  		    				<i class="fa fa-user" aria-hidden="true"></i>
+                  {% render_field login_form.username placeholder=insert_your_email %}
+  		        		</div>
+  		        		<div class="input_wrap">
+  		        			<i class="fa fa-lock" aria-hidden="true"></i>
+                    {% render_field login_form.password placeholder=insert_pass %}
+  		        		</div>
+  		        		<div class="submit_button">
+  		    				<input type="submit" class="btn-primary" value="{% trans 'Log In' %}"/>
+  		        		</div>
+  		        		<div class="pass_forget">
+  		        			<a href="{% url 'password_reset' %}">{% trans 'Did you forget your password?' %}</a>
+  		        		</div>
+  		        		<div class="politics">
+  		        			<p>{% trans 'By registering you accept our' %} <a href="#">{% trans 'politics' %}</a>{% trans 'and' %} <a href="#">{% trans 'privacy conditions' %}</a></p>
+                    <p>{% trans 'if you dont have account' %}<a href="{% url 'register_big' %}">{% trans 'Sign In' %}</a></p>
+  		        		</div>
+
+  		        	</form>
+  		        	
+  		        </div>
+  		    </div>
+  		    <div class="login_modal_footer">
+  		    
+  		    </div>
+  	      
+  	    </div>
+
+  </div>
+</div>
+
+<div class="modal fade login_modal_register bd-example-modal-sm" tabindex="-1" role="dialog"
+     aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+       <div class="login_modal_content">
+            <div class="login_modal_head">
+                <div class="register_title">
+                    <h3>{% trans 'Sign In' %}</h3>
+                    <i class="fa fa-close" id="modal-reg-close" aria-hidden="true"></i>
+
+                </div>
+            </div>
+            <div class="login_modal_body">
+
+                <div class="register">
+                  
+                  <form class="formulario" method="POST" action="{% url 'register_big' %}?next={% firstof request.path '/' %}">
+                    {% csrf_token %}
+                    <div class="input_wrap">
+                    <i class="fa fa-user" aria-hidden="true"></i>
+                    {% render_field register_form.name placeholder=insert_your_name %}
+                    </div>
+                    <div class="input_wrap">
+                    <i class="fa fa-envelope" aria-hidden="true"></i>
+                    {% render_field register_form.email placeholder=insert_your_email %}
+                    </div>
+                    <div class="input_wrap">
+                      <i class="fa fa-lock" aria-hidden="true"></i> 
+                    {% render_field register_form.password1 placeholder=insert_pass %}
+                    </div>
+                    <div class="input_wrap">
+                      <i class="fa fa-lock" aria-hidden="true"></i> 
+                    {% render_field register_form.password2 placeholder=confirm_pass %}
+                    </div>
+                    <div class="checkbox_wrap">
+                      <input type="checkbox" id="check_this">
+                      <label for="check_this">{% trans 'Click here if you want to receive fantastic offers (we dont send spam)' %}</label>
+                    </div>
+                    <div class="submit_button">
+                    <input type="submit" class="btn-primary" value="{% trans 'Sign In' %}"/>
+                    <p>{% trans 'If you already have account' %}<a href="{% url 'login_big' %}">{% trans 'Log In' %}</a></p>
+                    </div>  
+                  </form>
+                    
+                </div>
+            </div>
+            <div class="login_modal_footer">
+            
+            </div>
+                    
+      </div>
+
+  </div>
+</div>

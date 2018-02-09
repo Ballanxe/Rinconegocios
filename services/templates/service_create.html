@@ -1,0 +1,152 @@
+{% extends "profiles/base_dashboard.html" %}
+
+{% block head_title %} Dashboard || {{ block.super }} {% endblock head_title %}
+
+{% block content %}
+{% load i18n %}
+
+
+
+<main class="jumbotron main-wrap">
+	{% include 'snippets/dashboard_sidebar.html' %}
+	<div class="wrap-content-form">
+	{% load widget_tweaks %}
+		<div class="form-content">
+			<form id="form" action="{% url 'services:create' object.slug  %}" enctype="multipart/form-data" method="post">
+				{% csrf_token %}
+				<div class="form-title">
+					<h3>{% trans 'Register Services' %}</h3>
+				</div>
+				
+					{% if messages %}
+					     {% for message in messages %}
+				<div class="alert alert-{{message.level_tag}} form_messages_wrap" role="alert">
+					         {{ message }}
+				</div>
+					     {% endfor %}
+					 {% endif %}
+				
+				<div class="form_input_wrap">
+					{% if form.name.errors %}
+						<div class="alert alert-danger form_error_wrap" >
+							{{form.name.errors}}
+						</div>
+					{% endif %}
+					{{ form.name.label_tag }}
+					{% render_field form.name class="form-control" %}
+				</div>
+				<div class="form_input_wrap">
+					{% if form.en_name.errors %}
+						<div class="alert alert-danger form_error_wrap" >
+							{{form.en_name.errors}}
+						</div>
+					{% endif %}
+					{{ form.en_name.label_tag }}
+					{% render_field form.en_name class="form-control" %}
+				</div>
+				<div class="form_input_wrap">
+					{% if form.serv_desc_es.errors %}
+						<div class="alert alert-danger form_error_wrap" >
+							{{form.serv_desc_es.errors|escape}}
+						</div>
+					{% endif %}
+					{{ form.serv_desc_es.label_tag }}
+					{% render_field form.serv_desc_es class="form-control" %}
+				</div>
+				<div class="form_checkbox_wrap">
+					{{ form.auto_trans.label_tag }}	
+					<div class="form_checkbox_input_wrap">
+						{% render_field form.auto_trans %}
+						<small>{% trans 'This will translate your description. Uncheck it if you want to edit or self create your english description' %}</small>
+					</div>	
+				</div>
+
+
+				<div class="form_input_wrap">
+					{{ form.category.errors }}
+					{{ form.category.label_tag }}
+					{% render_field form.category class="form-control" %}
+				</div>
+
+				<div class="form_input_wrap">
+					{% if form.serv_image.errors %}
+						<div class="alert alert-danger form_error_wrap" >
+							{{form.serv_image.errors|escape}}
+						</div>
+					{% endif %}
+					{{ form.serv_image.label_tag }}
+					<div class="fileinput fileinput-new" data-provides="fileinput">
+						  <div class="fileinput-preview thumbnail" data-trigger="fileinput" style="width: 200px; height: 150px; border:.5px solid lightgray;"></div>
+						  <div>
+						    <span class="btn btn-primary btn-file">
+						    	<span class="fileinput-new">{% trans 'Select' %}</span>
+						    	<span class="fileinput-exists" data-trigger="fileinput" data-provides="fileinput">{% trans 'Change' %}</span>
+						    	{% render_field form.serv_image class="fileinput-new" %}
+						    </span>
+						    <a href="#" class="btn btn-primary fileinput-exists" data-dismiss="fileinput">{% trans 'Remove' %}</a>
+						  </div>
+					</div>
+				</div>
+				<div class="form_price_wrap">
+					<div class="form_input_wrap">
+						{{ form.old_price.errors }}
+						{{ form.old_price.label_tag }}
+						{% render_field form.price class="form-control" %}
+					</div>
+					<div class="form_input_wrap">
+						{{ form.price.errors }}
+						{{ form.price.label_tag }}
+						{% render_field form.price class="form-control" %}
+					</div>
+					<div class="form_input_wrap">
+						{{ form.discount.errors }}
+						{{ form.discount.label_tag }}
+						{% render_field form.discount class="form-control" %}
+					</div>
+				</div>
+				<div class="form_input_wrap">
+					{% if form.meta_keywords.errors %}
+						<div class="alert alert-danger form_error_wrap" >
+							{{form.meta_keywords.errors|escape}}
+						</div>
+					{% endif %}
+					{{ form.meta_keywords.label_tag }}
+					{% render_field form.meta_keywords class="form-control" %}
+				</div>
+				<div class="form_input_wrap">
+					{% if form.meta_description.errors %}
+						<div class="alert alert-danger form_error_wrap" >
+							{{form.meta_description.errors|escape}}
+						</div>
+					{% endif %}
+					{{ form.meta_description.label_tag }}
+					{% render_field form.meta_description class="form-control" %}
+				</div>
+				<div class="form_input_wrap">
+					{% if form.meta_author.errors %}
+						<div class="alert alert-danger form_error_wrap" >
+							{{form.meta_author.errors|escape}}
+						</div>
+					{% endif %}
+					{{ form.meta_author.label_tag }}
+					{% render_field form.meta_author class="form-control" %}
+				</div>
+				<div class="form_input_wrap">
+					{% if form.meta_copyright.errors %}
+						<div class="alert alert-danger form_error_wrap" >
+							{{form.meta_copyright.errors|escape}}
+						</div>
+					{% endif %}
+					{{ form.meta_copyright.label_tag }}
+					{% render_field form.meta_copyright class="form-control" %}
+				</div>
+				<div class="form_input_wrap">
+					<input type="submit" value="Enviar" class="btn btn-primary">
+				</div>
+			</form>
+		</div>
+	</div>
+</main>
+
+{% endblock %}
+			

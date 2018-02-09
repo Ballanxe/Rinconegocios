@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head lang="{{ LANGUAGE_CODE }}">
+	<title>
+		{% block head_title %} Rinconegocios.com {% endblock head_title %}
+	</title>
+	{% include 'snippets/head.html' %}
+</head>
+<body>
+{% include 'snippets/header_small.html' %}
+{% load static %}
+{% load widget_tweaks %}
+{% load i18n %}
+
+{% trans "Type just numbers" as phone_placeholder %}
+{% trans "Type your email" as insert_your_email %}
+{% trans "Type your first name" as name_placeholder %}
+{% trans "Type your last name" as lastname_placeholder %}
+{% trans "How can we help you?" as text_placeholder %}
+
+<div class="deal_content_wrapper">	
+<div class="form_deal_wrapper">
+		<div class="registration_logo_wrapper">
+			<img src="{% static 'images/logo.svg' %}">
+		</div>
+		<div class="deal_error_wrapper">
+
+			{% if form.errors %}
+			    {% for field in form %}
+			        {% for error in field.errors %}
+			            <div class="alert alert-danger">
+			                <p>{{ error|escape }}</p>
+			            </div>
+			        {% endfor %}
+			    {% endfor %}
+			    {% for error in form.non_field_errors %}
+			        <div class="alert alert-danger">
+			            <p>{{ error|escape }}</p>
+			        </div>
+			    {% endfor %}
+			{% endif %}
+
+		</div>
+		<div class="registration_form_body">
+			<form class="formulario" method="POST" action="{% url 'deals:create' object.get_lang_slug %}">
+			  {% csrf_token %}
+			  <div class="input_parent_wrapper">
+				  <div class="input_double_wrap">
+				  	  {{ deal_form.name.label_tag }}
+					  <div class="input_wrap">
+					  <i class="fa fa-user" aria-hidden="true"></i>
+					  {% render_field deal_form.name placeholder=name_placeholder %}
+					  </div>
+					  {{ deal_form.phone.label_tag }}
+					  <div class="input_wrap">
+					  <i class="fa fa-envelope" aria-hidden="true"></i>
+					  {% render_field deal_form.phone  placeholder=phone_placeholder %}
+					  </div>
+				  </div>
+				  <div class="input_double_wrap">
+				  	  {{ deal_form.last_name.label_tag }}
+					  <div class="input_wrap">
+					    <i class="fa fa-lock" aria-hidden="true"></i>
+					   {% render_field deal_form.last_name placeholder=lastname_placeholder %}
+					  </div>
+					  {{ deal_form.email.label_tag }}
+					  <div class="input_wrap">
+					    <i class="fa fa-lock" aria-hidden="true"></i>
+					   {% render_field deal_form.email placeholder=insert_your_email %}
+					  </div>
+				  </div>
+			  </div>
+			  <div class="mc_coment_input_wrapper deal_message_wrapper">
+			  		{{ deal_form.message.label_tag }}
+			  		{% render_field deal_form.message class="form-control" placeholder=text_placeholder %}
+			  </div>
+			  <div class="submit_button">
+			  <input type="submit" class="btn-primary" value="{% trans 'I want to improve my business' %}"/>
+			  </div>  
+			</form>
+		</div>
+		<div class="registration_form_footer">
+
+		</div>		
+
+</div>
+</div>
+
+
+{% include 'snippets/js.html' %}
+</body>
+
+</html>

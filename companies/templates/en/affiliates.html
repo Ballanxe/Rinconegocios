@@ -1,0 +1,97 @@
+{% extends "base.html" %}
+
+{% block head_title %} Index || {{ block.super }} {% endblock head_title %}
+
+{% block content %}
+
+{% load i18n %}
+
+{% load static %}
+
+{% include 'snippets/search_input_small.html' %}
+
+
+
+
+<div class="affiliates_wrap">
+
+	{% if search %}
+	{% for result in search %}
+
+		<div class="affiliates_item">	
+			<div class="affiliate_item_logo">
+				{% if result.logo %}
+					<img src="{{ result.logo.url }}">
+				{% else %}
+					<img src="{% static 'images/logo.png' %}">
+
+				{% endif %}
+			</div>
+			<div class="affiliate_item_info">
+				
+				<h3>{{ result.name }}</h3>
+				<p><strong>{% trans 'Category:' %}</strong>{{  result.get_category_display }}</p>
+				<p><strong>{% trans 'Response Time:' %}</strong> 15 </p>
+				<p><strong>{% trans 'Closed deals:' %}</strong>{{ result.contracts }}</p>
+				<p><strong>{% trans 'Languages:' %}</strong> Es, En </p>
+
+			</div>
+			<div class="affiliate_item_button_wrap">
+				<a class="btn btn-primary" href="{{ result.get_absolute_url }}"><i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+			</div>
+		</div>
+
+
+	{% endfor %}
+
+	{% else %}
+
+	{% for obj in object_list %}
+
+		<div class="affiliates_item">	
+			<div class="affiliate_item_logo">
+				{% if obj.logo %}
+					<img src="{{ obj.logo.url }}">
+				{% else %}
+					<img src="{% static 'images/logo.png' %}">
+
+				{% endif %}
+			</div>
+			<div class="affiliate_item_info">
+				
+				<h3>{{ obj.name }}</h3>
+				<p><strong>{% trans 'Category:' %}</strong>{{  obj.get_category_display }}</p>
+				<p><strong>{% trans 'Closed Deals:' %}</strong>{{ obj.contracts }}</p>
+				<p><strong>{% trans 'Languages:' %}</strong> Es, En </p>
+
+			</div>
+			<div class="affiliate_item_button_wrap">
+				<a class="btn btn-primary" href="{{ obj.get_absolute_url }}"><i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+			</div>
+		</div>
+
+		{% empty %}
+
+		<div class="first_company_wrapper">
+
+			<h1>{% trans 'Register your first company free' %}</h1>
+			<a {% if request.user.check_user %} data-toggle="modal" data-target="#user_data_request_modal" {% else %} href="{% url 'affiliates:create' %}"  {% endif %} class="btn btn-primary">{% trans 'Register' %}</a>
+
+		</div>
+
+
+		{% endfor %}
+		{% endif %}
+
+
+
+</div>
+
+{% include 'snippets/login_modal.html' %}
+{% include 'snippets/update_info_modal.html' %}
+
+{% endblock %}
+
+
+
+	

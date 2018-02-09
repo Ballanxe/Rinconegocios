@@ -1,0 +1,21 @@
+{% load static %}
+{% load i18n %}
+
+
+<div class="cuadro-buscar">
+	<div class="publicidad">
+		<img src="{% static 'images/publicidad1.jpg' %}">
+	</div>
+	<div class="texto_de_bienvenida">
+		<h1>{% trans 'The best service providers for your business or venture in one place.' %}</h1>
+		<h3>{% trans 'Do business with companies that know management and corporate governance.' %}</h3>
+	</div>
+	<div class="buscador">
+	  <form class='form-user' method='GET' action='.'>
+	    <input type="text" class="form-control" placeholder="Buscador de buenas empresas" name='q' value='{{ request.GET.q }}'>
+	    <span class="input-group-btn">
+	       <button class="btn btn-success" type="submit"><i class="fa fa-search" ></i></button>
+	    </span>
+	  </form>
+	</div>
+</div>

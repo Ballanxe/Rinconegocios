@@ -1,0 +1,1238 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-04 13:36-0400\n"
+"PO-Revision-Date: 2018-02-04 13:31+0000\n"
+"Last-Translator: b'Alberto Rincones <aa.rincones@gmail.com>'\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Translated-Using: django-rosetta 0.7.14\n"
+
+#: .\accounts\models.py:17
+msgid "First name"
+msgstr "First name"
+
+#: .\accounts\models.py:18
+msgid "Last name"
+msgstr "Last name"
+
+#: .\accounts\models.py:19
+msgid "Prefered language"
+msgstr "Prefered language"
+
+#: .\accounts\models.py:20 .\companies\templates\affiliates_detail.html:41
+#: .\services\templates\services_detail.html:86
+msgid "Country"
+msgstr "Country"
+
+#: .\accounts\templates\profiles\dashboard_profile.html:13
+msgid "Insert your username"
+msgstr "Insert your username"
+
+#: .\accounts\templates\profiles\dashboard_profile.html:14
+#: .\templates\snippets\affiliate_deal_modal.html:5
+#: .\templates\snippets\deal_modal.html:5
+msgid "Insert your first name"
+msgstr "Insert your first name"
+
+#: .\accounts\templates\profiles\dashboard_profile.html:15
+#: .\templates\snippets\affiliate_deal_modal.html:6
+#: .\templates\snippets\deal_modal.html:6
+msgid "Insert your last name"
+msgstr "Insert your last name"
+
+#: .\accounts\templates\profiles\dashboard_profile.html:16
+#: .\companies\templates\affiliates_update.html:14
+#: .\companies\templates\dashboard_affiliates.html:8
+#: .\deals\templates\affiliate_deal_form_big.html:15
+#: .\deals\templates\service_deal_form_big.html:15
+#: .\templates\snippets\affiliate_deal_modal.html:7
+#: .\templates\snippets\deal_modal.html:7
+msgid "Type just numbers"
+msgstr "Type just numbers"
+
+#: .\accounts\templates\profiles\dashboard_profile.html:23
+msgid "User Information"
+msgstr "User Information"
+
+#: .\accounts\views.py:21
+msgid "Your data has been updated"
+msgstr "Your data has been updated"
+
+#: .\companies\models.py:80 .\services\models.py:59
+#: .\templates\snippets\sidebar.html:6
+msgid "Marketing"
+msgstr "Marketing"
+
+#: .\companies\models.py:81 .\services\models.py:60
+#: .\templates\snippets\sidebar.html:20
+msgid "Finance"
+msgstr "Finance"
+
+#: .\companies\models.py:82 .\services\models.py:61
+msgid "Development"
+msgstr "Development"
+
+#: .\companies\models.py:83 .\services\models.py:62
+msgid "Vacations"
+msgstr "Vacations"
+
+#: .\companies\models.py:84 .\services\models.py:63
+msgid "Design"
+msgstr "Design"
+
+#: .\companies\models.py:85 .\services\models.py:64
+#: .\templates\snippets\sidebar.html:26
+msgid "Information Security"
+msgstr "Information Security"
+
+#: .\companies\models.py:92 .\deals\models.py:22
+msgid "Name"
+msgstr "Name"
+
+#: .\companies\models.py:93 .\deals\models.py:26
+msgid "Corporative Email"
+msgstr "Corporative Email"
+
+#: .\companies\models.py:100
+msgid "Logo"
+msgstr "Logo"
+
+#: .\companies\models.py:101
+msgid "Lead Magnet"
+msgstr "Lead Magnet"
+
+#: .\companies\models.py:102
+msgid "Years of fundation"
+msgstr "Years of fundation"
+
+#: .\companies\models.py:103
+msgid "Conversions"
+msgstr "Conversions"
+
+#: .\companies\models.py:104
+msgid "Terminated contracts"
+msgstr "Terminated contracts"
+
+#: .\companies\models.py:105
+msgid "Prospects"
+msgstr "Prospects"
+
+#: .\companies\models.py:106
+msgid "English Description"
+msgstr "English Description"
+
+#: .\companies\models.py:107
+msgid "Spanish Description"
+msgstr "Spanish Description"
+
+#: .\companies\models.py:108 .\services\models.py:90
+msgid "Automatic Translation"
+msgstr "Automatic Translation"
+
+#: .\companies\models.py:108 .\services\models.py:90
+msgid ""
+"Create automatic translation of description. You can edit it later in update "
+"page"
+msgstr ""
+"Create automatic translation of description. You can edit it later in update "
+"page"
+
+#: .\companies\models.py:110
+msgid "Mission"
+msgstr "Mission"
+
+#: .\companies\models.py:111
+msgid "Vision"
+msgstr "Spanish Description"
+
+#: .\companies\models.py:130
+msgid "English description isnt available"
+msgstr "English description isnt available"
+
+#: .\companies\templates\affiliates_deleted_list.html:31
+msgid "Created: "
+msgstr "Created:"
+
+#: .\companies\templates\affiliates_deleted_list.html:32
+msgid "Deleted at:"
+msgstr "Deleted at:"
+
+#: .\companies\templates\affiliates_deleted_list.html:33
+msgid "Owner: "
+msgstr "Owner:"
+
+#: .\companies\templates\affiliates_deleted_list.html:34
+msgid "Country: "
+msgstr "Country:"
+
+#: .\companies\templates\affiliates_detail.html:48
+msgid "Member since"
+msgstr "Member since"
+
+#: .\companies\templates\affiliates_detail.html:55
+#: .\deals\templates\buyers_deal_list.html:30
+#: .\deals\templates\seller_deal_list.html:31
+#: .\services\templates\services_detail.html:101
+msgid "Category"
+msgstr "Category"
+
+#: .\companies\templates\affiliates_detail.html:62
+msgid "CONTACT"
+msgstr "CONTACT"
+
+#: .\companies\templates\affiliates_detail.html:67
+msgid "Who are"
+msgstr "Who are"
+
+#: .\companies\templates\affiliates_detail.html:75
+msgid "Strategic Profile"
+msgstr "Strategic Profile"
+
+#: .\companies\templates\affiliates_detail.html:130
+msgid "Available Deals"
+msgstr "Available Deals"
+
+#: .\companies\templates\affiliates_detail.html:180
+msgid "Deal"
+msgstr "Deal"
+
+#: .\companies\templates\affiliates_detail.html:181
+#: .\services\templates\my_services_list.html:79
+#: .\services\templates\services_confirm_delete.html:64
+#: .\services\templates\services_deleted_list.html:63
+#: .\templates\services_public_list.html:61
+#: .\templates\services_public_list.html:149
+msgid "Contact"
+msgstr "Contact"
+
+#: .\companies\templates\affiliates_detail.html:207
+#: .\companies\templates\my_affiliates_dashboard.html:42
+#: .\services\templates\my_services_list.html:78
+#: .\services\templates\my_services_list.html:105
+#: .\services\templates\services_confirm_delete.html:63
+#: .\services\templates\services_confirm_delete.html:90
+#: .\services\templates\services_deleted_list.html:62
+#: .\services\templates\services_deleted_list.html:89
+#: .\templates\services_public_list.html:60
+#: .\templates\services_public_list.html:87
+msgid "See"
+msgstr "See"
+
+#: .\companies\templates\affiliates_update.html:23
+msgid "Update Company"
+msgstr "Update Company"
+
+#: .\companies\templates\affiliates_update.html:83
+#: .\companies\templates\dashboard_affiliates.html:77
+msgid "Select image"
+msgstr "Select image"
+
+#: .\companies\templates\affiliates_update.html:84
+#: .\companies\templates\dashboard_affiliates.html:78
+#: .\services\templates\service_create.html:83
+#: .\services\templates\service_update.html:97
+msgid "Change"
+msgstr "Change"
+
+#: .\companies\templates\affiliates_update.html:87
+#: .\companies\templates\dashboard_affiliates.html:81
+#: .\services\templates\service_create.html:86
+#: .\services\templates\service_update.html:100
+msgid "Remove"
+msgstr "Remove"
+
+#: .\companies\templates\affiliates_update.html:114
+#: .\companies\templates\dashboard_affiliates.html:107
+#: .\services\templates\service_create.html:60
+#: .\services\templates\service_update.html:63
+msgid ""
+"This will translate your description. Uncheck it if you want to edit or self "
+"create your english description"
+msgstr ""
+"This will translate your description. Uncheck it if you want to edit or self "
+"create your english description"
+
+#: .\companies\templates\confirm_delete.html:9
+#: .\services\templates\services_confirm_delete.html:101
+msgid "Yes, delete"
+msgstr "Yes, delete"
+
+#: .\companies\templates\confirm_delete.html:17
+msgid "Are you sure want to delete this company ?"
+msgstr "Are you sure want to delete this company ?"
+
+#: .\companies\templates\confirm_delete.html:48
+#: .\services\templates\services_confirm_delete.html:102
+msgid "No, return"
+msgstr "No, return"
+
+#: .\companies\templates\dashboard_affiliates.html:22
+msgid "Register Company"
+msgstr "Register Company"
+
+#: .\companies\templates\en\affiliates.html:33
+#: .\companies\templates\en\affiliates.html:69
+msgid "Category:"
+msgstr "Category:"
+
+#: .\companies\templates\en\affiliates.html:34
+msgid "Response Time:"
+msgstr "Response Time:"
+
+#: .\companies\templates\en\affiliates.html:35
+msgid "Closed deals:"
+msgstr "Closed deals:"
+
+#: .\companies\templates\en\affiliates.html:36
+#: .\companies\templates\en\affiliates.html:71
+msgid "Languages:"
+msgstr "Languages:"
+
+#: .\companies\templates\en\affiliates.html:70
+#: .\services\templates\services_detail.html:27
+msgid "Closed Deals:"
+msgstr "Closed Deals:"
+
+#: .\companies\templates\en\affiliates.html:83
+msgid "Register your first partner free"
+msgstr "Register your first partner free"
+
+#: .\companies\templates\en\affiliates.html:84
+#: .\companies\templates\my_affiliates_dashboard.html:62
+#: .\services\templates\my_services_list.html:127
+#: .\templates\services_public_list.html:193
+msgid "Register"
+msgstr "Register"
+
+#: .\companies\templates\my_affiliates_dashboard.html:43
+#: .\services\templates\my_services_list.html:110
+msgid "Edit"
+msgstr "Edit"
+
+#: .\companies\templates\my_affiliates_dashboard.html:44
+#: .\services\templates\my_services_list.html:109
+msgid "Clear"
+msgstr "Clear"
+
+#: .\companies\templates\my_affiliates_dashboard.html:45
+msgid "Publish"
+msgstr "Publish"
+
+#: .\companies\templates\my_affiliates_dashboard.html:60
+msgid "Register your first company free !"
+msgstr "Register your first company free !"
+
+#: .\companies\templates\my_affiliates_dashboard.html:72
+msgid "Add company"
+msgstr "Add company"
+
+#: .\companies\templates\my_affiliates_dashboard.html:77
+msgid "You have reached the limit of companies"
+msgstr "You have reached the limit of companies"
+
+#: .\companies\templates\my_affiliates_dashboard.html:93
+msgid "Update your profile info before upload a company"
+msgstr "Update your profile info before upload a company"
+
+#: .\companies\templates\my_affiliates_dashboard.html:97
+msgid "Update"
+msgstr "Update"
+
+#: .\companies\validators.py:10
+msgid "File too large. Size should not exceed {size} MiB."
+msgstr "File too large. Size should not exceed {size} MiB."
+
+#: .\companies\views.py:40
+msgid "The company \"{name}\" has been created"
+msgstr "The company \"{name}\" has been created"
+
+#: .\companies\views.py:80 .\services\views.py:205
+msgid "No results for your search"
+msgstr "No results for your search"
+
+#: .\companies\views.py:110 .\companies\views.py:119
+msgid "The company \"{name}\" has been updated"
+msgstr "The company \"{name}\" has been updated"
+
+#: .\companies\views.py:112
+msgid "The description has been translated. Remember edit it."
+msgstr "The description has been translated. Remember edit it."
+
+#: .\companies\views.py:200
+msgid "The company has been deleted"
+msgstr "The company has been deleted"
+
+#: .\deals\models.py:24
+msgid "Last Name"
+msgstr "Last Name"
+
+#: .\deals\models.py:28
+msgid "Phone Number"
+msgstr "Phone Number"
+
+#: .\deals\models.py:30
+msgid "Message"
+msgstr "Message"
+
+#: .\deals\templates\affiliate_deal_form_big.html:16
+#: .\deals\templates\service_deal_form_big.html:16
+msgid "Type your email"
+msgstr "Type your email"
+
+#: .\deals\templates\affiliate_deal_form_big.html:17
+#: .\deals\templates\service_deal_form_big.html:17
+msgid "Type your first name"
+msgstr "Type your first name"
+
+#: .\deals\templates\affiliate_deal_form_big.html:18
+#: .\deals\templates\service_deal_form_big.html:18
+msgid "Type your last name"
+msgstr "Type your last name"
+
+#: .\deals\templates\affiliate_deal_form_big.html:19
+#: .\deals\templates\service_deal_form_big.html:19
+msgid "How can we help you?"
+msgstr "How can we help you?"
+
+#: .\deals\templates\affiliate_deal_form_big.html:78
+#: .\deals\templates\service_deal_form_big.html:78
+#: .\templates\snippets\affiliate_deal_modal.html:72
+#: .\templates\snippets\deal_modal.html:73
+msgid "I want to improve my business"
+msgstr "I want to improve my business"
+
+#: .\deals\templates\buyers_deal_list.html:28
+#: .\deals\templates\seller_deal_list.html:33
+msgid "Service"
+msgstr "Service"
+
+#: .\deals\templates\buyers_deal_list.html:29
+#: .\deals\templates\seller_deal_list.html:30
+msgid "Business"
+msgstr "Business"
+
+#: .\deals\templates\buyers_deal_list.html:31
+#: .\deals\templates\seller_deal_list.html:29
+#: .\deals\templates\seller_deal_list.html:32
+msgid "Email"
+msgstr "Email"
+
+#: .\deals\templates\buyers_deal_list.html:32
+msgid "Phone"
+msgstr "Phone"
+
+#: .\deals\templates\buyers_deal_list.html:33
+#: .\deals\templates\seller_deal_list.html:34 .\services\models.py:82
+msgid "Price"
+msgstr "Price"
+
+#: .\deals\templates\buyers_deal_list.html:34
+#: .\deals\templates\seller_deal_list.html:35 .\services\models.py:84
+msgid "Discount"
+msgstr "Discount"
+
+#: .\deals\templates\buyers_deal_list.html:74
+msgid "No service atached "
+msgstr "No service atached"
+
+#: .\deals\templates\buyers_deal_list.html:81
+msgid "They contacted me"
+msgstr "They contacted me"
+
+#: .\deals\templates\buyers_deal_list.html:82
+msgid "I closed the deal"
+msgstr "I closed the deal"
+
+#: .\deals\templates\buyers_deal_list.html:83
+#: .\deals\templates\seller_deal_list.html:89
+msgid "Rate"
+msgstr "Rate"
+
+#: .\deals\templates\buyers_deal_list.html:92
+#: .\deals\templates\seller_deal_list.html:98
+msgid "You have no deals. Go make the first !"
+msgstr "You have no deals. Go make the first !"
+
+#: .\deals\templates\buyers_deal_list.html:93
+#: .\deals\templates\seller_deal_list.html:99
+msgid "Get a Service Now"
+msgstr "Get a Service Now"
+
+#: .\deals\templates\seller_deal_list.html:28
+msgid "Buyer"
+msgstr "Buyer"
+
+#: .\deals\templates\seller_deal_list.html:71
+msgid "No companies registered"
+msgstr "No companies registered"
+
+#: .\deals\templates\seller_deal_list.html:82
+msgid "No service attached"
+msgstr "No service attached"
+
+#: .\deals\templates\seller_deal_list.html:87
+msgid "Client contacted"
+msgstr "Client contacted"
+
+#: .\deals\templates\seller_deal_list.html:88
+msgid "Deal Closed"
+msgstr "Deal Closed"
+
+#: .\deals\templates\thanks_page.html:20
+msgid "Congrats !"
+msgstr "Congrats !"
+
+#: .\deals\templates\thanks_page.html:24
+msgid "You have make a pre deal with "
+msgstr "You have make a pre deal with"
+
+#: .\deals\templates\thanks_page.html:27
+msgid "Follow these recommendations to improve your user experience"
+msgstr "Follow these recommendations to improve your user experience"
+
+#: .\deals\templates\thanks_page.html:30
+msgid "The company will contact you via phone or email"
+msgstr "The company will contact you via phone or email"
+
+#: .\deals\templates\thanks_page.html:31
+msgid "Try to coordinate a phone call or a video call at a comfortable time"
+msgstr "Try to coordinate a phone call or a video call at a comfortable time"
+
+#: .\deals\templates\thanks_page.html:32
+msgid ""
+"You can use this deal to trade others services of the same partner. Try to "
+"build a long term business relationship"
+msgstr ""
+"You can use this deal to trade others services of the same partner. Try to "
+"build a long term business relationship"
+
+#: .\deals\templates\thanks_page.html:33
+msgid "Always set the date of the next session"
+msgstr "Always set the date of the next session"
+
+#: .\deals\templates\thanks_page.html:34
+#, python-format
+msgid "Always pays no more than 50%% in advance"
+msgstr "Always pays no more than 50%% in advance"
+
+#: .\deals\templates\thanks_page.html:35
+msgid "Tell us once they contact you or close the deal. It helps us to improve"
+msgstr ""
+"Tell us once they contact you or close the deal. It helps us to improve"
+
+#: .\deals\templates\thanks_page.html:43
+msgid "Greatest deals at few clicks"
+msgstr "Greatest deals at few clicks"
+
+#: .\deals\templates\thanks_page.html:45
+#: .\templates\snippets\dashboard_sidebar.html:12
+msgid "Buy Deals"
+msgstr "Buy Deals"
+
+#: .\deals\templates\thanks_page.html:46
+msgid "More Services"
+msgstr "More Services"
+
+#: .\django-authtools\authtools\admin.py:21
+msgid "Permissions"
+msgstr "Permissions"
+
+#: .\django-authtools\authtools\admin.py:28
+msgid "Important dates"
+msgstr "Important dates"
+
+#: .\django-authtools\authtools\context_processors.py:11
+msgid "Hola quisiera recibir más informacion"
+msgstr "Hola quisiera recibir más informacion"
+
+#: .\django-authtools\authtools\forms.py:39
+#: .\django-authtools\tests\tests\tests.py:708
+#: .\django-authtools\tests\tests\tests.py:713
+msgid "No password set."
+msgstr "No password set."
+
+#: .\django-authtools\authtools\forms.py:44
+#: .\django-authtools\tests\tests\tests.py:718
+#: .\django-authtools\tests\tests\tests.py:724
+msgid "Invalid password format or unknown hashing algorithm."
+msgstr "Invalid password format or unknown hashing algorithm."
+
+#: .\django-authtools\authtools\forms.py:47
+#: .\django-authtools\tests\tests\tests.py:756
+msgid "*************"
+msgstr "*************"
+
+#: .\django-authtools\authtools\forms.py:60
+msgid "The two password fields didn't match."
+msgstr "The two password fields didn't match."
+
+#: .\django-authtools\authtools\forms.py:61
+#, python-format
+msgid "A user with that %(username)s already exists."
+msgstr "A user with that %(username)s already exists."
+
+#: .\django-authtools\authtools\forms.py:64
+#: .\django-authtools\authtools\forms.py:139
+msgid "Password"
+msgstr "Password"
+
+#: .\django-authtools\authtools\forms.py:65
+msgid "Password confirmation"
+msgstr "Password confirmation"
+
+#: .\django-authtools\authtools\forms.py:67
+msgid "Enter the same password as above, for verification."
+msgstr "Enter the same password as above, for verification."
+
+#: .\django-authtools\authtools\forms.py:169
+msgid ""
+"This email address doesn't have an associated user account. Are you sure "
+"you've registered?"
+msgstr ""
+"This email address doesn't have an associated user account. Are you sure "
+"you've registered?"
+
+#: .\django-authtools\authtools\forms.py:197
+msgid "Insert you email"
+msgstr "Insert you email"
+
+#: .\django-authtools\authtools\forms.py:198
+#: .\templates\registration\login_view.html:18
+#: .\templates\registration\password_reset_confirm.html:15
+#: .\templates\registration\registration_view.html:17
+#: .\templates\snippets\login_modal.html:7
+msgid "Insert your password"
+msgstr "Insert your password"
+
+#: .\django-authtools\authtools\models.py:33
+msgid "email address"
+msgstr "email address"
+
+#: .\django-authtools\authtools\models.py:35
+msgid "staff status"
+msgstr "staff status"
+
+#: .\django-authtools\authtools\models.py:36
+msgid "Designates whether the user can log into this admin site."
+msgstr "Designates whether the user can log into this admin site."
+
+#: .\django-authtools\authtools\models.py:38
+msgid "active"
+msgstr "active"
+
+#: .\django-authtools\authtools\models.py:39
+msgid ""
+"Designates whether this user should be treated as active. Unselect this "
+"instead of deleting accounts."
+msgstr ""
+"Designates whether this user should be treated as active. Unselect this "
+"instead of deleting accounts."
+
+#: .\django-authtools\authtools\models.py:41
+msgid "date joined"
+msgstr "date joined"
+
+#: .\django-authtools\authtools\models.py:65
+msgid "name"
+msgstr "name"
+
+#: .\django-authtools\authtools\models.py:89
+msgid "user"
+msgstr "user"
+
+#: .\django-authtools\authtools\models.py:90
+msgid "users"
+msgstr "users"
+
+#: .\django-dbbackup\dbbackup\apps.py:12
+msgid "Backup and restore"
+msgstr "Backup and restore"
+
+#: .\rinconegocios\settings\base.py:173
+msgid "English"
+msgstr "English"
+
+#: .\rinconegocios\settings\base.py:174
+msgid "Spanish"
+msgstr "Spanish"
+
+#: .\rinconegocios\urls.py:22
+msgid "^deals/create/a/(?P<slug>[\\w-]+)/$"
+msgstr "^deals/create/a/(?P<slug>[\\w-]+)/$"
+
+#: .\rinconegocios\urls.py:23
+msgid "^deals/create/(?P<slug>[\\w-]+)/$"
+msgstr "^deals/create/(?P<slug>[\\w-]+)/$"
+
+#: .\rinconegocios\urls.py:24
+msgid "^deals/sell/list/$"
+msgstr "^deals/sell/list/$"
+
+#: .\rinconegocios\urls.py:25
+msgid "^deals/buy/list/$"
+msgstr "^deals/buy/list/$"
+
+#: .\rinconegocios\urls.py:26
+msgid "^deals/thanks/$"
+msgstr "^deals/thanks/$"
+
+#: .\rinconegocios\urls.py:35
+msgid "^services/create/(?P<slug>[\\w-]+)$"
+msgstr "^services/create/(?P<slug>[\\w-]+)$"
+
+#: .\rinconegocios\urls.py:36
+msgid "^services/briefcase/$"
+msgstr "^services/briefcase/$"
+
+#: .\rinconegocios\urls.py:37
+msgid "^services/briefcase/edit/(?P<slug>[\\w-]+)/$"
+msgstr "^services/briefcase/edit/(?P<slug>[\\w-]+)/$"
+
+#: .\rinconegocios\urls.py:38
+msgid "^services/(?P<slug>[\\w-]+)/$"
+msgstr "^services/(?P<slug>[\\w-]+)/$"
+
+#: .\rinconegocios\urls.py:39
+msgid "^services/delete/(?P<pk>\\d+)/$"
+msgstr "^services/delete/(?P<pk>\\d+)/$"
+
+#: .\rinconegocios\urls.py:40
+msgid "^services/deleted/list/$"
+msgstr "^services/deleted/list/$"
+
+#: .\rinconegocios\urls.py:41
+msgid "^$"
+msgstr "^$"
+
+#: .\rinconegocios\urls.py:50
+msgid "^affiliates/$"
+msgstr "^affiliates/$"
+
+#: .\rinconegocios\urls.py:51
+msgid "^affiliates/create/$"
+msgstr "^affiliates/create/$"
+
+#: .\rinconegocios\urls.py:52
+msgid "^affiliates/companies/$"
+msgstr "^affiliates/companies/$"
+
+#: .\rinconegocios\urls.py:53
+msgid "^affiliates/update/(?P<slug>[\\w-]+)/$"
+msgstr "^affiliates/update/(?P<slug>[\\w-]+)/$"
+
+#: .\rinconegocios\urls.py:54
+msgid "^affiliates/(?P<slug>[\\w-]+)/$"
+msgstr "^affiliates/(?P<slug>[\\w-]+)/$"
+
+#: .\rinconegocios\urls.py:55
+msgid "^affiliates/delete/(?P<pk>\\d+)/$"
+msgstr "^affiliates/delete/(?P<pk>\\d+)/$"
+
+#: .\rinconegocios\urls.py:56
+msgid "^affiliates/delete/list/$"
+msgstr "^affiliates/delete/list/$"
+
+#: .\rinconegocios\urls.py:76 .\rinconegocios\urls.py:77
+#: .\rinconegocios\urls.py:78
+msgid "^"
+msgstr "^"
+
+#: .\services\models.py:72
+msgid "Title"
+msgstr "Title"
+
+#: .\services\models.py:73
+msgid "English Title"
+msgstr "English Title"
+
+#: .\services\models.py:74
+msgid "Spanish Service Description"
+msgstr "Spanish Service Description"
+
+#: .\services\models.py:75
+msgid "English Service Description"
+msgstr "English Service Description"
+
+#: .\services\models.py:81
+msgid "Service Image"
+msgstr "Service Image"
+
+#: .\services\models.py:83
+msgid "Price Before"
+msgstr "Price Before"
+
+#: .\services\models.py:85
+msgid "Interested People"
+msgstr "Interested People"
+
+#: .\services\models.py:86
+msgid "Satisfied Clients"
+msgstr "Satisfied Clients"
+
+#: .\services\models.py:87
+msgid "Days left"
+msgstr "Days left"
+
+#: .\services\models.py:88
+msgid "Active "
+msgstr "Active"
+
+#: .\services\models.py:88
+msgid "This tells if a services is published or not"
+msgstr "This tells if a services is published or not"
+
+#: .\services\models.py:105
+msgid "English description isn't available"
+msgstr "English description isn't available"
+
+#: .\services\templates\my_services_list.html:125
+msgid "Register your first service now"
+msgstr "Register your first service now"
+
+#: .\services\templates\service_create.html:18
+msgid "Register Services"
+msgstr "Register Services"
+
+#: .\services\templates\service_create.html:82
+#: .\services\templates\service_update.html:96
+msgid "Select"
+msgstr "Select"
+
+#: .\services\templates\service_update.html:21
+msgid "Update Services"
+msgstr "Update Services"
+
+#: .\services\templates\service_update.html:158
+msgid "Send"
+msgstr "Send"
+
+#: .\services\templates\services_confirm_delete.html:16
+msgid "Are you sure want to delete this service ?"
+msgstr "Are you sure want to delete this service ?"
+
+#: .\services\templates\services_detail.html:23
+msgid "Service Information"
+msgstr "Service Information"
+
+#: .\services\templates\services_detail.html:31
+msgid "Deals Published"
+msgstr "Deals Published"
+
+#: .\services\templates\services_detail.html:35
+msgid "Days Left"
+msgstr "Days Left"
+
+#: .\services\templates\services_detail.html:49
+msgid "Let\\"
+msgstr "Let\\"
+
+#: .\services\templates\services_detail.html:55
+msgid "Click in Make Deal"
+msgstr "Click in Make Deal"
+
+#: .\services\templates\services_detail.html:59
+msgid "Update your data before send the deal"
+msgstr "Update your data before send the deal"
+
+#: .\services\templates\services_detail.html:63
+msgid "Partner will be in touch soon"
+msgstr "Partner will be in touch soon"
+
+#: .\services\templates\services_detail.html:67
+msgid "Absolutely without any commitment"
+msgstr "Absolutely without any commitment"
+
+#: .\services\templates\services_detail.html:70
+msgid "Make Deal"
+msgstr "Make Deal"
+
+#: .\services\templates\services_detail.html:93
+msgid "Partner Since"
+msgstr "Partner Since"
+
+#: .\services\templates\services_detail.html:108
+msgid " Profile"
+msgstr "Profile"
+
+#: .\services\views.py:43
+msgid "The service \"{name}\" has been created"
+msgstr "The service \"{name}\" has been created"
+
+#: .\services\views.py:102 .\services\views.py:111
+msgid "The service has been updated"
+msgstr "The service has been updated"
+
+#: .\services\views.py:104
+msgid "The service description has been translated. Remember edit it."
+msgstr "The service description has been translated. Remember edit it."
+
+#: .\services\views.py:172
+msgid "The service has been deleted"
+msgstr "The service has been deleted"
+
+#: .\templates\registration\login_view.html:16
+#: .\templates\registration\registration_view.html:15
+#: .\templates\snippets\login_modal.html:5
+msgid "Insert your name"
+msgstr "Insert your name"
+
+#: .\templates\registration\login_view.html:17
+#: .\templates\registration\password_reset_form.html:16
+#: .\templates\registration\registration_view.html:16
+#: .\templates\snippets\affiliate_deal_modal.html:9
+#: .\templates\snippets\deal_modal.html:9
+#: .\templates\snippets\login_modal.html:6
+msgid "Insert your email"
+msgstr "Insert your email"
+
+#: .\templates\registration\login_view.html:19
+#: .\templates\registration\password_reset_confirm.html:16
+#: .\templates\registration\registration_view.html:18
+#: .\templates\snippets\login_modal.html:8
+msgid "Confirm your password"
+msgstr "Confirm your password"
+
+#: .\templates\registration\login_view.html:62
+#: .\templates\registration\password_reset_complete.html:44
+#: .\templates\registration\registration_view.html:76
+#: .\templates\snippets\header.html:88
+#: .\templates\snippets\login_modal.html:17
+#: .\templates\snippets\login_modal.html:37
+#: .\templates\snippets\login_modal.html:99
+msgid "Log In"
+msgstr "Log In"
+
+#: .\templates\registration\login_view.html:65
+#: .\templates\snippets\login_modal.html:40
+msgid "Did you forget your password?"
+msgstr "Did you forget your password?"
+
+#: .\templates\registration\login_view.html:68
+#: .\templates\snippets\login_modal.html:43
+msgid "By registering you accept our"
+msgstr "By registering you accept our"
+
+#: .\templates\registration\login_view.html:68
+#: .\templates\snippets\login_modal.html:43
+msgid "politics"
+msgstr "politics"
+
+#: .\templates\registration\login_view.html:68
+#: .\templates\snippets\login_modal.html:43
+msgid "and"
+msgstr "and"
+
+#: .\templates\registration\login_view.html:68
+#: .\templates\snippets\login_modal.html:43
+msgid "privacy conditions"
+msgstr "privacy conditions"
+
+#: .\templates\registration\login_view.html:70
+#: .\templates\snippets\login_modal.html:44
+msgid "if you dont have account"
+msgstr "if you dont have account"
+
+#: .\templates\registration\login_view.html:70
+#: .\templates\registration\registration_view.html:75
+#: .\templates\snippets\header.html:93
+#: .\templates\snippets\login_modal.html:44
+#: .\templates\snippets\login_modal.html:66
+#: .\templates\snippets\login_modal.html:98
+msgid "Sign In"
+msgstr "Sign In"
+
+#: .\templates\registration\password_reset_complete.html:43
+msgid "Your password has been reset"
+msgstr "Your password has been reset"
+
+#: .\templates\registration\password_reset_confirm.html:58
+msgid "Reset Password"
+msgstr "Reset Password"
+
+#: .\templates\registration\password_reset_done.html:29
+msgid ""
+"Check your inbox and click on the link we sent you to reset your password. "
+"Do not forget to check in your span folder if you can not find the email."
+msgstr ""
+"Check your inbox and click on the link we sent you to reset your password. "
+"Do not forget to check in your span folder if you can not find the email."
+
+#: .\templates\registration\password_reset_form.html:57
+msgid "Send Mail"
+msgstr "Send Mail"
+
+#: .\templates\registration\registration_view.html:59
+msgid "Your password is safe. We just store encrypted version"
+msgstr "Your password is safe. We just store encrypted version"
+
+#: .\templates\registration\registration_view.html:72
+#: .\templates\snippets\login_modal.html:95
+msgid "Click here if you want to receive fantastic offers (we dont send spam)"
+msgstr "Click here if you want to receive fantastic offers (we dont send spam)"
+
+#: .\templates\registration\registration_view.html:76
+msgid "If you already have an account"
+msgstr "If you already have an account"
+
+#: .\templates\services_public_list.html:191
+msgid "Register your first service deal"
+msgstr "Register your first service deal"
+
+#: .\templates\snippets\affiliate_deal_modal.html:8
+#: .\templates\snippets\deal_modal.html:8
+msgid "Insert a message"
+msgstr "Insert a message"
+
+#: .\templates\snippets\affiliate_deal_modal.html:18
+#: .\templates\snippets\deal_modal.html:18
+msgid "One click to make business"
+msgstr "One click to make business"
+
+#: .\templates\snippets\dashboard_sidebar.html:13
+msgid "Sell Deals"
+msgstr "Sell Deals"
+
+#: .\templates\snippets\header.html:10 .\templates\snippets\header.html:15
+msgid "Services"
+msgstr "Services"
+
+#: .\templates\snippets\header.html:18
+msgid "Real State"
+msgstr "Real State"
+
+#: .\templates\snippets\header.html:21
+msgid "Private Equity"
+msgstr "Private Equity"
+
+#: .\templates\snippets\header.html:24
+msgid "Blog"
+msgstr "Blog"
+
+#: .\templates\snippets\header.html:27
+msgid "Affiliates"
+msgstr "Affiliates"
+
+#: .\templates\snippets\header.html:30
+msgid "Our Team"
+msgstr "Our Team"
+
+#: .\templates\snippets\header.html:57
+#: .\templates\snippets\header_small.html:11
+msgid "SERVICES"
+msgstr "SERVICES"
+
+#: .\templates\snippets\header.html:58
+#: .\templates\snippets\header_small.html:12
+msgid "REAL STATE"
+msgstr "REAL STATE"
+
+#: .\templates\snippets\header.html:59
+#: .\templates\snippets\header_small.html:13
+msgid "PRIVATE EQUITY"
+msgstr "PRIVATE EQUITY"
+
+#: .\templates\snippets\header.html:60
+#: .\templates\snippets\header_small.html:14
+msgid "BLOG"
+msgstr "BLOG"
+
+#: .\templates\snippets\header.html:61
+msgid "AFFILIATES"
+msgstr "AFFILIATES"
+
+#: .\templates\snippets\header.html:62
+#: .\templates\snippets\header_small.html:15
+msgid "OUR TEAM"
+msgstr "OUR TEAM"
+
+#: .\templates\snippets\header.html:67
+#: .\templates\snippets\header_small.html:20
+msgid "Follow Up"
+msgstr "Follow Up"
+
+#: .\templates\snippets\header.html:84
+msgid "Log Out"
+msgstr "Log Out"
+
+#: .\templates\snippets\login_modal.html:99
+msgid "If you already have account"
+msgstr "If you already have account"
+
+#: .\templates\snippets\search_input.html:10
+msgid "The best service providers for your business or venture in one place."
+msgstr "The best service providers for your business or venture in one place."
+
+#: .\templates\snippets\search_input.html:11
+msgid ""
+"Do business with companies that know management and corporate governance."
+msgstr ""
+"Do business with companies that know management and corporate governance."
+
+#: .\templates\snippets\search_input_small.html:6
+msgid "We select the best technology companies for your lean enterprise"
+msgstr "We select the best technology companies for your lean enterprise"
+
+#: .\templates\snippets\search_input_small.html:7
+msgid "You are only four clicks of a good business"
+msgstr "You are only four clicks of a good business"
+
+#: .\templates\snippets\sidebar.html:10
+msgid "Social Media Management"
+msgstr "Social Media Management"
+
+#: .\templates\snippets\sidebar.html:11
+msgid "Community Manager"
+msgstr "Community Manager"
+
+#: .\templates\snippets\sidebar.html:12
+msgid "Graphic Design"
+msgstr "Graphic Design"
+
+#: .\templates\snippets\sidebar.html:17
+msgid "Web Development"
+msgstr "Web Development"
+
+#: .\templates\snippets\sidebar.html:23
+msgid "Head Hunting"
+msgstr "Head Hunting"
+
+#: .\templates\snippets\sidebar.html:29
+msgid "Proyect Management"
+msgstr "Proyect Management"
+
+#: .\utils\models.py:16
+msgid "creation date and time"
+msgstr "creation date and time"
+
+#: .\utils\models.py:24
+msgid "modification date and time"
+msgstr "modification date and time"
+
+#: .\utils\models.py:63
+msgid "SEO Keywords"
+msgstr "SEO Keywords"
+
+#: .\utils\models.py:66
+msgid "Separate keywords by comma."
+msgstr "Separate keywords by comma."
+
+#: .\utils\models.py:70
+msgid "SEO Description"
+msgstr "SEO Description"
+
+#: .\utils\models.py:76
+msgid "SEO Author"
+msgstr "SEO Author"
+
+#: .\utils\models.py:82
+msgid "SEO Copyright"
+msgstr "SEO Copyright"
+
+#: .\utils\models.py:130
+msgid "Buyer Comment"
+msgstr "Buyer Comment"
+
+#: .\utils\models.py:130
+msgid "Tell us what was your experience with this service?"
+msgstr "Tell us what was your experience with this service?"
+
+#: .\utils\models.py:132
+msgid "Seller Comment"
+msgstr "Seller Comment"
+
+#: .\utils\models.py:132
+msgid "What do you want to say about this client?"
+msgstr "What do you want to say about this client?"
+
+#: .\utils\models.py:134
+msgid "Buyer tells deal is finished"
+msgstr "Buyer tells deal is finished"
+
+#: .\utils\models.py:134
+msgid "Did you buy this service ?"
+msgstr "Did you buy this service ?"
+
+#: .\utils\models.py:136
+msgid "Seller tells deal is finished"
+msgstr "Seller tells deal is finished"
+
+#: .\utils\models.py:136
+msgid "Did you sell this service ?"
+msgstr "Did you sell this service ?"
+
+#: .\utils\models.py:138
+msgid "Buyer tells has been contated"
+msgstr "Buyer tells has been contated"
+
+#: .\utils\models.py:138
+msgid "Did the company make contact with you ?"
+msgstr "Did the company make contact with you ?"
+
+#: .\utils\models.py:140
+msgid "Seller tells has contacted buyer"
+msgstr "Seller tells has contacted buyer"
+
+#: .\utils\models.py:140
+msgid "Have you already made contact with this client ?"
+msgstr "Have you already made contact with this client ?"
+
+#: .\utils\models.py:142
+msgid "This means that de deal was successful"
+msgstr "This means that de deal was successful"
+
+#~ msgid "No partner yet"
+#~ msgstr "No partner yet"
+
+#~ msgid "Rate Company"
+#~ msgstr "Rate Company"
+
+#~ msgid "Contactado"
+#~ msgstr "Contactado"
+
+#~ msgid "Terminado"
+#~ msgstr "Terminado"
+
+#~ msgid "Calificar"
+#~ msgstr "Calificar"
+
+#, fuzzy
+#~ msgid "¡ Registra tu primera empresa ahora !"
+#~ msgstr "¡ Registra tu primera empresa ahora !"
+
+#, fuzzy
+#~ msgid "¿Has olvidado la contraseña?"
+#~ msgstr "¿Has olvidado la contraseña?"
+
+#, fuzzy
+#~ msgid "Registrar"
+#~ msgstr "Register Company"
+
+#, fuzzy
+#~ msgid "Contactar"
+#~ msgstr "Country"
+
+#~ msgid "^create/$"
+#~ msgstr "^create/$"
+
+#~ msgid "^accounts/"
+#~ msgstr "^accounts/"
+
+#~ msgid "Sign In "
+#~ msgstr "Sign In"
+
+#~ msgid "Did you forget your password"
+#~ msgstr "Did you forget your password"
+
+#, fuzzy
+#~ msgid "Did you forgot your password?"
+#~ msgstr "Did you forget your password?"

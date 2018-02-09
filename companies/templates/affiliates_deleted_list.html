@@ -1,0 +1,51 @@
+{% extends "profiles/base_dashboard.html" %}
+
+{% block head_title %} Dashboard || {{ block.super }} {% endblock head_title %}
+
+{% block content %}
+{% load static %}
+
+
+<main class="jumbotron main-wrap">
+	{% include 'snippets/dashboard_sidebar.html' %}
+
+	<div class="user_affiliates_wrap">
+
+		{% for obj in object_list %}
+
+		<div class="user_affiliates_item">	
+			<div class="user_affiliate_item_logo">
+
+				{% if obj.logo %}
+					<img src="{{ obj.logo.url }}">
+				{% else %}
+					<img src="{% static 'images/logo.png' %}">
+
+				{% endif %}
+
+			</div>
+			<div class="user_affiliate_item_info_wrapp">
+				<div class="user_affiliate_item_info">
+					<h3>{{ obj.name }}</h3>
+					<small>{{  obj.get_category_display }}</small>
+					<p>{% trans 'Created: ' %}<span>{{ obj.created }}</span></p>
+					<p>{% trans 'Deleted at:' %} <span>{{ obj.deleted_at }}</span></p>
+					<p>{% trans 'Owner: ' %} <span>{{ obj.owner.name }}</span> <small>{{ obj.owner.email }}</small></p>
+					<p>{% trans 'Country: ' %}<span>{{ obj.owner.get_country_display }}</span></p>
+
+<!-- 					<p><strong>{{  obj.get_category_display }}</strong></p> -->
+				</div>
+				<div class="user_affiliate_item_button_wrap">
+
+				</div>
+			</div>
+
+		</div>
+
+
+
+		{% endfor %}
+	</div>
+</main>
+
+{% endblock %}

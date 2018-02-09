@@ -1,0 +1,32 @@
+{% load i18n %}
+
+<nav class="sidebar" >
+	<ul > 
+		<li class="parent">
+			<a href="	" ><i class="fa fa-bullseye" ></i>{% trans 'Marketing' %}</a><i class="fa fa-chevron-right" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample"></i>
+		</li>
+		<div class="collapse" id="collapseExample">
+		    <ul class="submenu" id="marketing_services">
+		    	<li><a href="	">{% trans 'Social Media Management' %}</a></li>
+		    	<li><a href="	">{% trans 'Community Manager' %}</a></li>
+		    	<li><a href="	">{% trans 'Graphic Design' %}</a></li>
+		    </ul>
+		</div>
+		
+		<li>
+			<a href="	"><i class="far fa-chart-bar" ></i>{% trans 'Web Development' %}</a><i class="fa fa-chevron-right" aria-hidden="true"></i>
+		</li>
+		<li>
+			<a href="	"><i class="fa fa-cogs" ></i>{% trans 'Finance' %}</a><i class="fa fa-chevron-right" aria-hidden="true"></i>
+		</li>
+		<li>
+			<a href="	"><i class="fa fa-users" ></i>{% trans 'Head Hunting' %}</a><i class="fa fa-chevron-right" aria-hidden="true"></i>
+		</li>
+		<li>
+			<a href="	"><i class="fa fa-briefcase" ></i>{% trans 'Information Security' %}</a><i class="fa fa-chevron-right" aria-hidden="true"></i>
+		</li>
+		<li>
+			<a href="	"><i class="fas fa-pencil-alt" ></i>{% trans 'Proyect Management' %}</a><i class="fa fa-chevron-right" aria-hidden="true"></i>
+		</li>
+	</ul>			
+</nav>

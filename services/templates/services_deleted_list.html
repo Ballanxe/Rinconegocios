@@ -1,0 +1,102 @@
+{% extends "profiles/base_dashboard.html" %}
+
+{% block head_title %} Dashboard || {{ block.super }} {% endblock head_title %}
+
+{% block content %}
+{% load static %}
+{% load i18n %}
+
+
+
+<main class="jumbotron main-wrap">
+	{% include 'snippets/dashboard_sidebar.html' %}
+
+	<div class="user_my_services_wrap">
+
+		{% for obj in object_list %}
+
+		<div class="unidad">	
+				<div class="logo-ranking">
+					<div class="logo">
+						{% if obj.offerer.logo %}
+							<img src="{{ obj.offerer.logo.url }}">
+						{% else %}
+							<img src="{% static 'images/logo.png' %}">
+
+						{% endif %}
+
+					</div>
+					<div class="ranking">	
+						<i class="fa fa-star" ></i>
+						<i class="fa fa-star" ></i>
+						<i class="fa fa-star" ></i>
+						<i class="fa fa-star" ></i>
+						<i class="fa fa-star" ></i>
+					</div>	
+				</div>
+				<div class="imagen-principal">
+					{% if obj.serv_image %}
+						<img src="{{ obj.serv_image.url }}">
+					{% else %}
+						<img src="{% static 'images/logo.png' %}">
+
+					{% endif %}
+
+				</div>
+				<div class="nombre-servicio">	
+					<div class="bd-example">
+					  <div id="producto_{{ obj.id }}" class="carousel slide" data-ride="carousel" data-interval="false">
+					    <ol class="carousel-indicators">
+					      <li data-target="#producto_{{ obj.id }}" data-slide-to="0" class="active"></li>
+					      <li data-target="#producto_{{ obj.id }}" data-slide-to="1"></li>
+					      <li data-target="#producto_{{ obj.id }}" data-slide-to="2"></li>
+					    </ol>
+					    <div class="carousel-inner" role="listbox">
+					      <div class="carousel-item active">
+					         <p>{{ obj.name }}</p>
+					      </div>
+					      <div class="carousel-item">
+					        <p>{{ obj.get_service_lang|safe|slice:"37" }}</p>
+					      </div>
+					      <div class="carousel-item">
+					      	<button type="button" href="pagina_servicio.html" class="btn-oferta btn btn-info">{% trans 'See' %}</button>
+					        <button type="button" class="btn-contacto btn btn-success">{% trans 'Contact' %}</button>
+					        
+					      </div>
+					    </div>
+					    <a class="carousel-control-prev" href="#producto_{{ obj.id }}" role="button" data-slide="prev">
+					     <i class="fa fa-chevron-left" aria-hidden="true"></i>
+					    </a>
+					    <a class="carousel-control-next" href="#producto_{{ obj.id }}" role="button" data-slide="next">
+					      <i class="fa fa-chevron-right" aria-hidden="true" data-slide="next"></i>
+					    </a>
+					  </div>
+					</div>
+				</div>
+				<div class="oferta">
+					{% if obj.discount %}
+					<div class="item descuento">	
+						<span>{{ obj.discount }}</span><span>%</span>
+					</div>
+					{% endif %}
+					{% if obj.price %}
+					<div class="item precio">	
+						<span>{{ obj.price }}</span><span>$</span>
+					</div>
+					{% endif %}
+
+					<div class="item  boton">
+						<a href="{% url 'services:detail' slug=obj.slug %}" type="button" class="mini-btn-oferta btn btn-primary btn-sm">{% trans 'See' %}</a>	
+					</div>		
+				</div>
+
+
+		</div>
+
+
+
+		{% endfor %}
+	</div>
+</main>
+
+{% endblock %}

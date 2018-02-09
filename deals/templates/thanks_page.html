@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head lang="{{ LANAGUAGE_CODE }}">
+	<title>
+		{% block head_title %} Rinconegocios.com {% endblock head_title %}
+	</title>
+	{% include 'snippets/head.html' %}
+</head>
+<body>
+{% include 'snippets/header_small.html' %}
+{% load static %}
+{% load widget_tweaks %}
+{% load i18n %}
+
+
+
+<div class="thanks_page_wrapper">
+	<div class="thanks_logo_wrapper">
+		<div class="thanks_logo">
+			<h1>{% trans 'Congrats !' %}</h1>
+
+			<i class="fas fa-handshake" aria-hidden="true"></i>
+
+			<p>{% trans 'You have make a pre deal with ' %}<span><a href="{% url 'affiliates:detail' object.seller.slug %}">{{ object.seller.name }}</a></span></p>
+		</div>
+		<div class="thanks_info">
+			<h3>{% trans 'Follow these recommendations to improve your user experience' %}</h3>
+			<ul>
+
+				<li><i class="fas fa-check" aria-hidden="true"></i>{% trans 'The company will contact you via phone or email' %}</li>
+				<li><i class="fas fa-check" aria-hidden="true"></i>{% trans 'Try to coordinate a phone call or a video call at a comfortable time' %}</li>
+				<li><i class="fas fa-check" aria-hidden="true"></i>{% trans 'You can use this deal to trade others services of the same partner. Try to build a long term business relationship' %} </li>
+				<li><i class="fas fa-check" aria-hidden="true"></i>{% trans 'Always set the date of the next session' %} </li>
+				<li><i class="fas fa-check" aria-hidden="true"></i>{% trans 'Always pays no more than 50% in advance' %}</li>
+				<li><i class="fas fa-check" aria-hidden="true"></i>{% trans 'Tell us once they contact you or close the deal. It helps us to improve' %} </li>
+
+			</ul>
+			
+			
+		</div>
+		<div class="thanks_footer">
+			<img src="{% static 'images/logo.svg' %}">
+			<p>{% trans 'Greatest deals at few clicks' %}</p>
+			<div class="thanks_button_wrapper">
+				<a class="btn btn-primary" href="{% url 'deals:buyer_list' %}">{% trans 'Buy Deals' %}</a>
+				<a class="btn btn-primary" href="">{% trans 'More Services' %}</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+{% include 'snippets/js.html' %}
+
+</body>
+
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head lang="{{ LANGUAGE_CODE }}">
+	<title>
+		{% block head_title %} Rinconegocios.com {% endblock head_title %}
+	</title>
+	{% include 'snippets/head.html' %}
+</head>
+<body>
+{% include 'snippets/header_small.html' %}
+{% load static %}
+{% load widget_tweaks %}
+{% load i18n %}
+
+{% trans "Insert your name" as insert_your_name %}
+{% trans "Insert your email" as insert_your_email %}
+{% trans "Insert your password" as insert_pass %}
+{% trans "Confirm your password" as confirm_pass %}
+
+<div class="registration_main">
+	<div class="registration_body container">
+		<div class="welcome_text_wrapper">
+			<h3>Hola Mundo</h3>
+		</div>
+		<div class="registration_form_wrapper">
+			<div class="registration_logo_wrapper">
+				<img src="{% static 'images/logo.svg' %}">
+			</div>
+			<div class="error_wrapper">
+
+				{% if form.errors %}
+				    {% for field in form %}
+				        {% for error in field.errors %}
+				            <div class="alert alert-danger">
+				                <p>{{ error|escape }}</p>
+				            </div>
+				        {% endfor %}
+				    {% endfor %}
+				    {% for error in form.non_field_errors %}
+				        <div class="alert alert-danger">
+				            <p>{{ error|escape }}</p>
+				        </div>
+				    {% endfor %}
+				{% endif %}
+
+			</div>
+			<div class="registration_form_body">
+				<form class="formulario" method="POST" action="{% url 'register_big' %}?next={% firstof request.path '/' %}">
+				  {% csrf_token %}
+				  <div class="input_wrap">
+				  <i class="fa fa-user" aria-hidden="true"></i>
+				  {% render_field register_form.name placeholder=insert_your_name %}
+				  </div>
+				  <div class="input_wrap">
+				  <i class="fa fa-envelope" aria-hidden="true"></i>
+				  {% render_field register_form.email placeholder=insert_your_email %}
+				  </div>
+				  <div class="pass_politics">	
+				  		<p>{% trans 'Your password is safe. We just store encrypted version' %}</a></p>
+				  </div>
+				  <div class="input_wrap">
+				    <i class="fa fa-lock" aria-hidden="true"></i>
+				   {% render_field register_form.password1 placeholder=insert_pass %}
+				  </div>
+
+				  <div class="input_wrap">
+				    <i class="fa fa-lock" aria-hidden="true"></i> 
+				   {% render_field register_form.password2 placeholder=confirm_pass %}
+				  </div>
+				  <div class="checkbox_wrap">
+				    <input type="checkbox" id="check_this">
+				    <label for="check_this">{% trans 'Click here if you want to receive fantastic offers (we dont send spam)' %}</label>
+				  </div>
+				  <div class="submit_button">
+				  <input type="submit" class="btn-primary" value="{% trans 'Sign In' %}"/>
+				  <p>{% trans 'If you already have an account' %}<a href="{% url 'login_big' %}">{% trans 'Log In' %}</a></p>
+				  </div>  
+				</form>
+			</div>
+			<div class="registration_form_footer">
+
+			</div>		
+		</div>
+	</div>
+	
+</div>
+
+
+{% include 'snippets/js.html' %}
+</body>
+
+</html>

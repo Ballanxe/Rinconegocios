@@ -1,0 +1,237 @@
+{% extends "base.html" %}
+
+{% block head_title %} Index || {{ block.super }} {% endblock head_title %}
+
+{% block content %}
+{% load static %}
+{% load i18n %}
+
+
+	<div class="container-fluid imagen_principal_empresa">
+
+			<div class="avatar_empresa">
+				{% if object.logo %}
+					<img src="{{ object.logo.url }}">
+				{% else %}
+					<img src="{% static 'images/logo.png' %}">
+
+				{% endif %}
+
+			</div>	
+			
+	</div>
+	<div class="franja">
+		<div class="espacio_libre">
+			
+		</div>
+		<div class="nombre">
+			<h4>{{ object.name }}</h4>
+		</div>
+		
+	</div>
+	<div class="container-fluid datos_empresa datos_empresa_2">
+		<div class="nombre_oculto">
+			<h3>{{ object.name }}</h3>
+		</div>
+		<div class="info_empresa">
+			<div class="ie_body">
+				<div class="ie_body_item">
+					<i class="fa fa-map-marker" ></i>
+					<div class="ie_body_item_text">
+						<h5>{% trans 'Country' %}</h5>
+						<span>{{ object.owner.country.name }}</span>
+					</div>
+				</div>
+				<div class="ie_body_item">
+					<i class="fa fa-calendar" ></i>
+					<div class="ie_body_item_text">
+						<h5>{% trans 'Member since' %}</h5>
+						<span>{{ object.created.year }}</span>
+					</div>
+				</div>
+				<div class="ie_body_item">
+					<i class="fa fa-tags" ></i>
+					<div class="ie_body_item_text">
+						<h5>{% trans 'Category' %}</h5>
+						<span>{{ object.get_category_display }}</span>
+					</div>
+				</div>
+				
+			</div>
+			<div class="ie_footer">
+
+				{% if object.owner == request.user %}
+
+				<a type="button"  data-toggle="modal" data-target=".owner_service_modal" data-toggle="modal" class="btn btn-info">{% trans 'CONTACT' %}</a>
+
+				{% else %}
+
+				<a type="button" {% if request.user.is_authenticated %} data-toggle="modal" data-target=".me_interesa_modal-lg" {% else %} data-toggle="modal" data-target=".login_modal_enter" href="#" {% endif %} class="btn btn-info">{% trans 'CONTACT' %}</a>
+
+				{% endif %}
+			</div>
+		</div>
+		<div class="info_area">
+			<div class="titulo_empresa">
+				<h3>{% trans 'Who are' %} <span>{{ object.name }}</span> ?</h3>
+			</div>
+			<div class="presentacion">	
+				<p>
+					{{ object.get_affiliate_lang|safe }}
+				</p>
+			</div>
+			<div class="titulo_empresa">
+				<h3>{% trans 'Strategic Profile' %}</h3>
+			</div>
+			<div class="perfil_estrategico_wrap">	
+				<div class="perfil_estrategico">
+					<div id="accordion" role="tablist" aria-multiselectable="true">
+					  <div class="card">
+					    <div class="card-header" role="tab" id="headingOne">
+					      <h5 class="mb-0">
+					        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne" class="collapsed">
+					          Misión
+					        </a>
+					      </h5>
+					    </div>
+
+					    <div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne">
+					      <div class="card-block">
+					        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
+					      </div>
+					    </div>
+					  </div>
+					  <div class="card">
+					    <div class="card-header" role="tab" id="headingTwo">
+					      <h5 class="mb-0">
+					        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+					          Visión
+					        </a>
+					      </h5>
+					    </div>
+					    <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo">
+					      <div class="card-block">
+					        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
+					      </div>
+					    </div>
+					  </div>
+					  <div class="card">
+					    <div class="card-header" role="tab" id="headingThree">
+					      <h5 class="mb-0">
+					        <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseOne" class="collapsed">
+					          Valores
+					        </a>
+					      </h5>
+					    </div>
+					    <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingOne">
+					      <div class="card-block">
+					        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
+					      </div>
+					    </div>
+					  </div>
+					</div>
+				</div>
+				<div class="ubicacion">
+					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3923.1909351034283!2d-66.93649598511739!3d10.485609592519271!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8c2a5f1127bcc7d9%3A0x2c24855a1276ab11!2sROIStar+Digital!5e0!3m2!1ses-419!2sve!4v1503430663881" width="100%" height="350px" frameborder="0" style="border:0" allowfullscreen></iframe>
+				</div>
+			</div>
+			<div class="titulo_empresa">
+				<h3>{% trans 'Available Deals' %}</h3>
+			</div>
+			<div class="servicios_de_la_empresa">
+
+				{% for obj in available_offers %}
+
+				<div class="unidad">	
+						<div class="logo-ranking">
+							<div class="logo">
+								{% if obj.offerer.logo %}
+									<img src="{{ obj.offerer.logo.url }}">
+								{% else %}
+									<img src="{% static 'images/logo.png' %}">
+
+								{% endif %}
+
+							</div>
+							<div class="ranking">	
+								<i class="fa fa-star" ></i>
+								<i class="fa fa-star" ></i>
+								<i class="fa fa-star" ></i>
+								<i class="fa fa-star" ></i>
+								<i class="fa fa-star" ></i>
+							</div>	
+						</div>
+						<div class="imagen-principal">
+							{% if obj.serv_image %}
+								<img src="{{ obj.serv_image.url }}">
+							{% else %}
+								<img src="{% static 'images/logo.png' %}">
+
+							{% endif %}
+
+						</div>
+						<div class="nombre-servicio">	
+							<div class="bd-example">
+							  <div id="producto_{{ obj.id }}" class="carousel slide" data-ride="carousel" data-interval="false">
+							    <ol class="carousel-indicators">
+							      <li data-target="#producto_{{ obj.id }}" data-slide-to="0" class="active"></li>
+							      <li data-target="#producto_{{ obj.id }}" data-slide-to="1"></li>
+							      <li data-target="#producto_{{ obj.id }}" data-slide-to="2"></li>
+							    </ol>
+							    <div class="carousel-inner" role="listbox">
+							      <div class="carousel-item active">
+							         <p>{{ obj.name }}</p>
+							      </div>
+							      <div class="carousel-item">
+							        <p>{{ obj.get_service_lang|safe|slice:"37" }}</p>
+							      </div>
+							      <div class="carousel-item">
+							      	<button type="button" href="pagina_servicio.html" class="btn-oferta btn btn-info">{% trans 'Deal' %}</button>
+							        <button type="button" class="btn-contacto btn btn-success">{% trans 'Contact' %}</button>
+							        
+							      </div>
+							    </div>
+							    <a class="carousel-control-prev" href="#producto_{{ obj.id }}" role="button" data-slide="prev">
+							     <i class="fa fa-chevron-left" aria-hidden="true"></i>
+							    </a>
+							    <a class="carousel-control-next" href="#producto_{{ obj.id }}" role="button" data-slide="next">
+							      <i class="fa fa-chevron-right" aria-hidden="true" data-slide="next"></i>
+							    </a>
+							  </div>
+							</div>
+						</div>
+						<div class="oferta">
+							{% if obj.discount %}
+							<div class="item descuento">	
+								<span>{{ obj.discount }}</span><span>%</span>
+							</div>
+							{% endif %}
+							{% if obj.price %}
+							<div class="item precio">	
+								<span>{{ obj.price }}</span><span>$</span>
+							</div>
+							{% endif %}
+
+							<div class="item  boton">
+								<a href="{% url 'services:detail' slug=obj.get_lang_slug %}" type="button" class="mini-btn-oferta btn btn-primary btn-sm">{% trans 'See' %}</a>	
+							</div>		
+						</div>
+
+				</div>
+
+
+				{% endfor %}
+
+
+			</div>		
+		</div>
+		
+		
+			
+		
+
+	</div>
+	{% include 'snippets/affiliate_deal_modal.html' %}
+	{% include 'snippets/service_owner_modal.html' %}
+
+{% endblock %}

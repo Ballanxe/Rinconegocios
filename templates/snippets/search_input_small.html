@@ -1,0 +1,18 @@
+{% load i18n %}
+
+<div class="cuadro-buscar">
+
+	<div class="texto_de_bienvenida">
+		<h3>{% trans 'We select the best technology companies for your lean enterprise' %}</h3>
+		<h5>{% trans 'You are only four clicks of a good business' %}</h5>
+	</div>
+	<div class="buscador">
+	  <form class='form-user' method='GET' action='.'>
+	    <input type="text" class="form-control" placeholder="Buscador de buenas empresas" name='q' value='{{ request.GET.q }}'>
+	    <span class="input-group-btn">
+	       <button class="btn btn-success" type="submit"><i class="fa fa-search" ></i></button>
+	    </span>
+	  </form>
+	</div>
+</div>
+

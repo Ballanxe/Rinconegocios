@@ -1,0 +1,105 @@
+{% load static %}
+{% load i18n %}
+
+
+<header>
+	<nav class="navbar navbar-toggleable-md navbar-light bg-faded upper-nav">
+	  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+	    <span class="navbar-toggler-icon"></span>
+	  </button>
+	  <a class="navbar-brand" href="#">{% trans 'Services' %}</a>
+
+	  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+	    <ul class="navbar-nav mr-auto">
+	      <li class="nav-item active">
+	        <a class="nav-link" href="{% url 'services:list' %}">{% trans 'Services' %}<span class="sr-only">(current)</span></a>
+	      </li>
+	      <li class="nav-item active">
+	        <a class="nav-link" href="#">{% trans 'Real State' %}<span class="sr-only">(current)</span></a>
+	      </li>
+	      <li class="nav-item active">
+	        <a class="nav-link" href="#">{% trans 'Private Equity' %}<span class="sr-only">(current)</span></a>
+	      </li>
+	      <li class="nav-item active">
+	        <a class="nav-link" href="#">{% trans 'Blog' %}<span class="sr-only">(current)</span></a>
+	      </li>
+	      <li class="nav-item active">
+	        <a class="nav-link" href="{% url 'affiliates:list' %}">{% trans 'Affiliates' %}<span class="sr-only">(current)</span></a>
+	      </li>
+	      <li class="nav-item active">
+	        <a class="nav-link" href="#">{% trans 'Our Team' %}<span class="sr-only">(current)</span></a>
+	      </li>
+	    </ul>
+	    <form class="form-inline my-2 my-lg-0" wtx-context="EEF1E168-648D-4D42-BBD0-6C5BF9134BAD">
+	      <input class="form-control mr-sm-2" type="text" placeholder="Search" wtx-context="E4633C77-3382-42F6-A937-B747D4BC0370">
+	      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+	    </form>
+	  </div>
+	</nav>
+	<div class="jumbotron img-h">
+
+		<div class="main_img_wrapper">
+
+			<img src="{% static 'images/logo.svg' %}">
+		</div>
+		{% include 'snippets/language_form.html' %}
+
+
+	</div>
+	<div class="container-fluid bienvenidos">
+		 <a href="	" class="loguito"><img src="{% static 'images/logo2.svg' %}"></a>
+		
+		<nav class="navbar-p">
+
+
+				
+			<ul>
+			    <li><a href="{% url 'services:list' %}">{% trans 'SERVICES' %}</a></li>
+				<li><a href="bienes_raices.html">{% trans 'REAL STATE' %}</a></li>
+			    <li><a href="	">{% trans 'PRIVATE EQUITY' %}</a></li>
+			    <li><a href="	">{% trans 'BLOG' %}</a></li>
+			    <li><a href="{% url 'affiliates:list' %}">{% trans 'AFFILIATES' %}</a></li>
+			    <li><a href="	">{% trans 'OUR TEAM' %}</a></li>
+			</ul>
+
+		</nav>
+        <div class="follow-us">
+        	<p>{% trans 'Follow Up' %}</p>
+            <a href="">
+            	<i class="fab fa-facebook-square" aria-hidden="true"></i>
+            </a>
+            <a href="">
+            	<i class="fab fa-twitter-square" aria-hidden="true"></i>
+            </a>
+            <a href="">
+            	<i class="fab fa-linkedin-square" aria-hidden="true"></i>
+            </a>
+            
+        </div>
+
+        <div class="icons">
+
+        	{% if request.user.is_authenticated %}
+        	<p><a href="{% url 'profiles:detail' pk=request.user.id %}">{{ request.user.name }} </a></p>
+        	<p><a href="{% url 'logout' %}">| {% trans 'Log Out' %}</a></p>
+        	{% else %}
+        	<a class="user-button" data-toggle="modal" data-target=".login_modal_enter" href="#">
+<!--         		<i class="fa fa-user" aria-hidden="true"></i> -->
+        		{% trans 'Log In' %}
+        	</a>
+        	<span>|</span>
+        	<a class="user-button" data-toggle="modal" data-target=".login_modal_register" href="#">
+<!--         		<i class="fa fa-user" aria-hidden="true"></i> -->
+				{% trans 'Sign In' %}
+        	</a>
+        	{% endif %}
+        	<a id="menu-toggle" class="menu-button"><i class="fa fa-bars" aria-hidden="true"></i></a>
+        	
+        </div>
+
+
+
+       
+ 
+	</div>
+</header>

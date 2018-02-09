@@ -1,0 +1,21 @@
+{% load i18n %}
+
+<div class="sidebar-dashboard">
+	<ul>
+		<li><a href="{% url 'profiles:detail' pk=request.user.id %}"><i class="fa fa-user" aria-hidden="true"></a></i></li>
+		<li><a href="{% url 'affiliates:my_list' %}"><i class="fa fa-upload" aria-hidden="true"></a></i></li>
+		<li><a href="{% url 'services:my_list' %}"><i class="fa fa-briefcase" aria-hidden="true"></a></i></li>
+		<li class="deal_drop_menu_wrapp">
+			<i class="fa fa-handshake" aria-hidden="true"></i>
+			<div class="deal_drop_menu">
+				<ul>
+					<li><a href="{% url 'deals:buyer_list' %}">{% trans 'Buy Deals' %}</a></li>
+					<li><a href="{% url 'deals:seller_list' %}">{% trans 'Sell Deals' %}</a></li>
+				</ul>	
+			</div>
+
+		</li>
+		<li><a href="#"><i class="fa fa-heart" aria-hidden="true"></a></i></li>
+		<li><a href="#"><i class="fa fa-cogs" aria-hidden="true"></a></i></li>
+	</ul>
+</div>

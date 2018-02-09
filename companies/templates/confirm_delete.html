@@ -1,0 +1,57 @@
+{% extends "profiles/base_dashboard.html" %}
+
+{% block head_title %} Dashboard || {{ block.super }} {% endblock head_title %}
+
+{% block content %}
+{% load static %}
+{% load i18n %}
+
+{% trans 'Yes, delete' as yes_delete %}
+
+<main class="jumbotron main-wrap">
+	{% include 'snippets/dashboard_sidebar.html' %}
+	<div class="user_affiliates_wrap">
+
+
+
+			<h3>{% trans 'Are you sure want to delete this company ?' %}</h3>
+
+	
+					<div class="user_affiliates_item">	
+						<div class="user_affiliate_item_logo">
+
+							{% if object.logo %}
+								<img src="{{ object.logo.url }}">
+							{% else %}
+								<img src="{% static 'images/logo.png' %}">
+
+							{% endif %}
+
+						</div>
+						<div class="user_affiliate_item_info_wrapp">
+							<div class="user_affiliate_item_info">
+								<h3>{{ object.name }}</h3><small>{{  object.get_category_display }}</small>
+			<!-- 					<p><strong>{{  object.get_category_display }}</strong></p> -->
+							</div>
+
+						</div>
+
+					</div>
+
+
+
+			<form method="post" action="">
+				{% csrf_token %}
+
+				<div class="buttons_delete_wrap">	
+					<input type="submit" value="yes_delete" class="btn btn-outline-danger">
+					<a href="{% url 'affiliates:my_list' %}" class="btn btn-primary">{% trans 'No, return' %}</a>
+				</div>
+			</form>
+
+	</div>
+
+</main>
+
+
+{% endblock %}

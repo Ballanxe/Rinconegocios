@@ -1,0 +1,83 @@
+{% load widget_tweaks %}
+{% load static %}
+{% load i18n %}
+
+{% trans 'Insert your first name' as firstname_p %}
+{% trans 'Insert your last name' as lastname_p %}
+{% trans 'Type just numbers' as phone_p %}
+{% trans 'Insert a message' as message_p %}
+{% trans 'Insert your email' as email_p %}
+
+<div class="modal fade me_interesa_modal-lg" tabindex="-1" role="dialog"
+     aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal_contacto">
+        <div class="form_deal_modal_wrapper">
+                <div class="registration_logo_wrapper">
+
+                    <h3>{% trans 'One click to make business' %}</h3>
+                </div>
+                <div class="deal_error_wrapper">
+
+                    {% if form.errors %}
+                        {% for field in form %}
+                            {% for error in field.errors %}
+                                <div class="alert alert-danger">
+                                    <p>{{ error|escape }}</p>
+                                </div>
+                            {% endfor %}
+                        {% endfor %}
+                        {% for error in form.non_field_errors %}
+                            <div class="alert alert-danger">
+                                <p>{{ error|escape }}</p>
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+
+                </div>
+                <div class="registration_form_body">
+                    <form class="formulario" method="POST" action="{% url 'deals:affiliates' object.slug %}">
+                                  {% csrf_token %}
+                      <div class="input_parent_wrapper">
+                          <div class="input_double_wrap">
+                              {{ deal_form.name.label_tag }}
+                              <div class="input_wrap">
+                              <i class="fa fa-user" aria-hidden="true"></i>
+                              {% render_field deal_form.name placeholder=name_placeholder %}
+                              </div>
+                              {{ deal_form.phone.label_tag }}
+                              <div class="input_wrap">
+                              <i class="fa fa-envelope" aria-hidden="true"></i>
+                              {% render_field deal_form.phone  placeholder=phone_p %}
+                              </div>
+                          </div>
+                          <div class="input_double_wrap">
+                              {{ deal_form.last_name.label_tag }}
+                              <div class="input_wrap">
+                                <i class="fa fa-lock" aria-hidden="true"></i>
+                               {% render_field deal_form.last_name placeholder=lastname_p %}
+                              </div>
+                              {{ deal_form.email.label_tag }}
+                              <div class="input_wrap">
+                                <i class="fa fa-lock" aria-hidden="true"></i>
+                               {% render_field deal_form.email placeholder=email_p %}
+                              </div>
+                          </div>
+                      </div>
+                      <div class="mc_coment_input_wrapper deal_message_wrapper">
+                            {{ deal_form.message.label_tag }}
+                            {% render_field deal_form.message class="form-control" placeholder=message_p %}
+                      </div>
+                      <div class="submit_button">
+                      <input type="submit" class="btn-primary" value="{% trans 'I want to improve my business' %}"/>
+                      </div>
+                      <div class="deal_form_footer_image">
+                          <img src="{% static 'images/logo.svg' %}">
+                      </div>    
+                    </form>
+                </div>
+
+        </div>
+    </div>
+  </div>
+</div>

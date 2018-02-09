@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head lang="{{ LANGUAGE_CODE }}">
+	<title>
+		{% block head_title %} Rinconegocios.com {% endblock head_title %}
+	</title>
+	{% include 'snippets/head.html' %}
+</head>
+<body>
+{% include 'snippets/dashboard_header.html' %}
+
+
+
+
+{% block content %}{% endblock content %}	
+
+
+
+
+{% include 'snippets/js.html' %}
+
+</body>
+
+</html>

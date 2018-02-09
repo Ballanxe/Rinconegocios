@@ -1,0 +1,136 @@
+{% extends "base.html" %}
+
+{% block head_title %} Index || {{ block.super }} {% endblock head_title %}
+
+{% block content %}
+{% load static %}
+{% load i18n %}
+
+
+
+<main class="jumbotron main-wrap">
+
+	
+	<div class="wrap-content">
+		<div class="container-fluid imagen_principal">	
+			<div class="text_container">	
+				<h3>{{ object.get_service_name }}</h3>
+			</div>
+		</div>
+		<div class="container datos_servicio">	
+			<div class="informacion_del_servicio">
+				<div class="titulo">
+					<h3>{% trans 'Service Information' %}</h3>
+				</div>
+				<div class="indicadores">
+					<div class="indicadores_child">
+						<p>{% trans 'Closed Deals:' %}</p>
+						<span>{{ object.affiliates.clients }}</span>
+					</div>
+					<div class="indicadores_child">
+						<p>{% trans 'Deals Published' %}</p>
+						<span>{{ n_publications }}</span>
+					</div>
+					<div class="indicadores_child">
+						<p>{% trans 'Days Left' %}</p>
+						<span>{{ object.get_days_left }}</span>
+					</div>	
+				</div>
+				<div class="contenido">
+					{{ object.get_service_lang|safe }}
+				</div>
+				<div class="espacio_disponible">
+					
+				</div>
+			</div>
+			<div class="contacto_aside">
+				<div class="cuadro_de_accion">
+					<div class="ca_header">
+						<h3>{% trans 'Let\'s make business' %}</h3>
+
+					</div>
+					<div class="ca_body">
+						<div class="pasos">
+							<div class="numberCircle">1</div> 
+							<p>{% trans 'Click in Make Deal' %}</p>
+						</div>
+						<div class="pasos">
+							<div class="numberCircle">2</div>
+							<p>{% trans 'Update your data before send the deal' %}</p> 
+						</div>
+						<div class="pasos">
+							<div class="numberCircle">3</div>
+							<p>{% trans 'Partner will be in touch soon' %}</p>
+						</div>	
+					</div>
+					<div class="disclaimer">
+						<p>{% trans 'Absolutely without any commitment' %}</p>
+					</div>
+					<div class="ca_footer">
+						{% if object.offerer.owner == request.user %}
+
+						<button type="button" class="btn btn-primary" data-toggle="modal" data-target=".owner_service_modal" >{% trans 'Make Deal' %}</button>
+
+						{% else %}
+
+						<button type="button" class="btn btn-primary" {% if request.user.is_authenticated %} data-toggle="modal" data-target=".me_interesa_modal-lg" {% else %} data-toggle="modal" data-target=".login_modal_enter" href="#" {% endif %} >{% trans 'Make Deal' %}</button>
+
+						{% endif %}
+					</div>
+				</div>
+				<div class="info_empresa">
+					<div class="ie_header">
+						{% if object.offerer.logo %}
+							<img src="{{ object.offerer.logo.url }}">
+						{% else %}
+							<img src="{% static 'images/logo.png' %}">
+
+						{% endif %}
+					</div>
+					<div class="ie_body">
+						<div class="ie_body_item">
+							<i class="fa fa-map-marker" ></i>
+							<div class="ie_body_item_text">
+								<h5>{% trans 'Country' %}</h5>
+								<span>{{ object.offerer.country }}</span>
+							</div>
+						</div>
+						<div class="ie_body_item">
+							<i class="fa fa-calendar" ></i>
+							<div class="ie_body_item_text">
+								<h5>{% trans 'Partner Since' %}</h5>
+								<span> {{ object.created.year }} </span>
+							</div>
+						</div>
+
+						<div class="ie_body_item">
+							<i class="fa fa-tags" ></i>
+							<div class="ie_body_item_text">
+								<h5>{% trans 'Category' %}</h5>
+								<span> {{ object.offerer.get_category_display }}</span>
+							</div>
+						</div>
+						
+					</div>
+					<div class="ie_footer">
+						<a href="{% url 'affiliates:detail' slug=object.offerer.slug %}" type="button" class="btn btn-info">{% trans ' Profile' %}</a>
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</div>
+	<div>	</div>
+</main>
+{% include 'snippets/deal_modal.html' %}
+{% include 'snippets/service_owner_modal.html' %}
+
+
+
+
+
+
+{% endblock %}

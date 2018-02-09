@@ -1,0 +1,88 @@
+{% extends "profiles/base_dashboard.html" %}
+
+{% block head_title %} Dashboard || {{ block.super }} {% endblock head_title %}
+
+{% block content %}
+{% load i18n %}
+{% load static %}
+
+
+
+<main class="jumbotron main-wrap">
+	{% include 'snippets/dashboard_sidebar.html' %}
+
+	<div class="user_affiliates_wrap">
+			{% if messages %}
+			     {% for message in messages %}
+		<div class="alert alert-{{message.level_tag}} form_messages_wrap" role="alert">
+			         {{ message }}
+		</div>
+			     {% endfor %}
+			 {% endif %}
+
+		{% for obj in object_list %}
+
+		<div class="user_affiliates_item">	
+			<div class="user_affiliate_item_logo">
+
+				{% if obj.logo %}
+					<img src="{{ obj.logo.url }}">
+				{% else %}
+					<img src="{% static 'images/logo.png' %}">
+
+				{% endif %}
+
+			</div>
+			<div class="user_affiliate_item_info_wrapp">
+				<div class="user_affiliate_item_info">
+					<h3>{{ obj.name }}</h3><small>{{  obj.get_category_display }}</small>
+<!-- 					<p><strong>{{  obj.get_category_display }}</strong></p> -->
+				</div>
+				<div class="user_affiliate_item_button_wrap">
+					<button type="button" class="btn btn-primary btn-sm"><a href="{{ obj.get_absolute_url }}">{% trans 'See' %}</a></button>
+					<button type="button" class="btn btn-primary btn-sm"><a href="{% url 'affiliates:update' obj.slug %}">{% trans 'Edit' %}</a></button>
+					<button type="button" class="btn btn-primary btn-sm"><a href="{% url 'affiliates:delete' obj.pk %}">{% trans 'Clear' %}</a></button>
+					<button type="button" class="btn btn-primary btn-sm"><a href="{% url 'services:create' obj.slug %}">{% trans 'Publish' %}</a></button>
+				</div>
+			</div>
+
+		</div>
+
+
+
+		{% empty %}
+
+		
+
+		<div class="first_company_wrapper">
+
+
+			<h1>{% trans 'Register your first company free !' %}</h1>
+
+			<a {% if request.user.check_user %} data-toggle="modal" data-target="#user_data_request_modal" {% else %} href="{% url 'affiliates:create' %}"  {% endif %} class="btn btn-primary">{% trans 'Register' %}</a>
+		</div>
+
+		
+
+		{% endfor %}
+
+		{% if object_list.count < 3 and object_list.count > 0 %}
+
+		<div class="create_company_button_wrapper">
+			<a {% if request.user.check_user %} data-toggle="modal" data-target="#user_data_request_modal" {% else %} href="{% url 'affiliates:create' %}"  {% endif %} class="btn btn-primary">{% trans 'Add company' %}</a>	
+		</div>
+
+		{% elif object_list.count == 3 %}
+
+		<p>{% trans 'You have reached the limit of companies' %}</p>
+
+		{% endif %}
+	</div>
+
+
+</main>
+
+{% include 'snippets/update_info_modal.html' %}
+
+
+{% endblock %}

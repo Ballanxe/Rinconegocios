@@ -1,0 +1,92 @@
+{% extends "profiles/base_dashboard.html" %}
+
+{% block head_title %} Dashboard || {{ block.super }} {% endblock head_title %}
+
+{% block content %}
+{% load i18n %}
+<main class="jumbotron main-wrap">
+	{% include 'snippets/dashboard_sidebar.html' %}
+<div class="wrap-content-form">
+{% load widget_tweaks %}
+{% load i18n %}
+
+{% trans 'Insert your username' as username_p %}
+{% trans 'Insert your first name' as firstname_p %}
+{% trans 'Insert your last name' as lastname_p %}
+{% trans 'Type just numbers' as phone_p %}
+
+	<div class="form-content">
+		
+		<form id="form1" method="post">
+			{% csrf_token %}
+			<div class="form-title">
+				<h3>{% trans 'User Information' %}</h3>
+			</div>
+			
+				{% if messages %}
+				     {% for message in messages %}
+			<div class="alert alert-{{message.level_tag}} form_messages_wrap" role="alert">
+				         {{ message }}
+			</div>
+				     {% endfor %}
+				 {% endif %}
+			
+			<div class="form_input_wrap">
+				{{ form.name.errors }}
+				{{ form.name.label_tag }}
+				{% render_field form.name class="form-control" placeholder=username_p %}
+			</div>
+			<div class="form_input_wrap">
+				{{ form.first_name.errors }}
+				{{ form.first_name.label_tag }}
+				{% render_field form.first_name placeholder=firstname_p class="form-control" %}
+			</div>
+			<div class="form_input_wrap">
+				{{ form.last_name.errors }}
+				{{ form.last_name.label_tag }}
+				{% render_field form.last_name placeholder=lastname_p class="form-control" %}
+			</div>
+			<div class="form_input_wrap">
+				{{ form.email.errors }}
+				{{ form.email.label_tag }}
+				{% render_field form.email class="form-control" %}
+			</div>
+			<div class="form_input_wrap">
+				{% if form.phone.errors %}
+					<div class="alert alert-danger form_error_wrap" >
+						{{form.phone.errors}}
+					</div>
+				{% endif %}
+				{{ form.phone.label_tag }}
+				<div class="form_input_phone">
+					{% render_field form.phone placeholder=phone_p class="custom-select"  %}
+				</div>
+			</div>
+			<div class="form_input_wrap">
+				{{ form.language.errors }}
+				{{ form.language.label_tag }}
+				{% render_field form.language class="custom-select" %}
+			</div>
+			<div class="form_input_wrap">
+				{{ form.country.errors }}
+				{{ form.country.label_tag }}
+				{% render_field form.country class="custom-select" %}
+			</div>
+			<div class="submit_wrap">
+				<input type="submit" class="btn btn-primary" name="">
+				<div class="form_messages_wrap">
+				{% if messages %}
+				     {% for message in messages %}
+				         {{ message }}
+				     {% endfor %}
+				 {% endif %}
+				</div>
+			</div>
+
+		</form>
+	</div>
+</div>
+</main>
+
+{% endblock %}
+			

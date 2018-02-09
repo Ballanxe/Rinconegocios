@@ -1,0 +1,106 @@
+{% extends "profiles/base_dashboard.html" %}
+
+{% block head_title %} Dashboard || {{ block.super }} {% endblock head_title %}
+
+{% block content %}
+{% load i18n %}
+{% load static %}
+
+
+
+
+<main class="jumbotron main-wrap">
+	{% include 'snippets/dashboard_sidebar.html' %}
+
+	<div class="user_deals_table_wrap">
+			{% if messages %}
+			     {% for message in messages %}
+		<div class="alert alert-{{message.level_tag}} form_messages_wrap" role="alert">
+			         {{ message }}
+		</div>
+			     {% endfor %}
+			 {% endif %}
+
+		{% if object_list %}
+		<table class="table table-striped table-hover">
+		  <thead>
+		    <tr>
+		      <th>{% trans 'Service' %}</th>
+		      <th>{% trans 'Business' %}</th>
+		      <th>{% trans 'Category' %}</th>
+		      <th>{% trans 'Email' %}</th>
+		      <th>{% trans 'Phone' %}</th>
+		      <th>{% trans 'Price' %}</th>
+		      <th>{% trans 'Discount' %}</th>
+		      <th><i class="fa fa-cogs" aria-hidden="true"></i></th>
+
+		    </tr>
+		  </thead>
+		  <tbody>
+		  	{% for obj in object_list %}
+		    <tr>
+
+		    	{% if obj.service %}
+
+		    	<td>
+		    		{{ obj.service.name }}
+				</td>
+				{% else %}
+				<td>
+					<p> No service atached </p>
+				</td>
+				{% endif %}
+
+				<td>
+					{{ obj.seller.name }}
+				</td>
+				<td>
+					{{ obj.seller.get_category_display }}
+				</td>
+
+		      	<td>{{ obj.seller.email }}</td>
+		      	<td>{{ obj.seller.phone }}</td>
+
+		      	{% if obj.service %}
+
+		    	<td>
+		    		{{ obj.service.price }}
+				</td>
+				<td>
+		    		{{ obj.service.discount }}
+				</td>
+				{% else %}
+				<td colspan="2">
+					<p> {% trans 'No service atached ' %}</p>
+				</td>
+				{% endif %}
+
+
+		    
+			   <td class="btn-group-vertical" role="group" aria-label="Basic example">
+			   	  <button type="button" class="btn btn-secondary btn-sm">{% trans 'They contacted me' %}</button>
+			   	  <button type="button" class="btn btn-secondary btn-sm">{% trans 'I closed the deal' %}</button>
+			   	  <button type="button" class="btn btn-secondary btn-sm">{% trans 'Rate' %}</button>
+			   </td>
+		    </tr>
+		    {% endfor %}
+		  </tbody>
+		</table>
+			{% else %}
+
+			<div class="no_deal_wrapper">
+				<h3>{% trans 'You have no deals. Go make the first !' %}</h3>
+				<a href="{% url 'services:list' %}" class="btn btn-primary">{% trans 'Get a Service Now' %}</a>
+			</div>
+
+			{% endif %}
+
+
+	</div>
+
+
+
+</main>
+
+
+{% endblock %}
