@@ -2,7 +2,7 @@ Babel==2.5.1
 certifi==2018.1.18
 chardet==3.0.4
 dj-database-url==0.4.2
-Django==1.11
+Django==2.2.24
 -e git+http://github.com/fusionbox/django-authtools@7842c4d52e0a25fd473fbd35db9d466259c0492a#egg=django_authtools
 django-countries==5.0
 -e git+https://github.com/mjs7231/django-dbbackup.git@7f3cbb214e9c4012ca267751c6560d6b7f4e7c5c#egg=django_dbbackup
